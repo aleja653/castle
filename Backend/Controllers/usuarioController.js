@@ -26,7 +26,7 @@ function crearUsuario(req, res){
     usuario.save()
         .then((usuarioGuardado) => {
             if (!usuarioGuardado) {
-                res.status(404).send({ message: 'no se ha creado exitosamente el usuario' })
+                res.status(404).send({ message: 'No se ha creado exitosamente el usuario' })
             } else {
                 res.status(200).send({ usuario: usuarioGuardado })
             }
@@ -43,7 +43,7 @@ function actualizarUsuario(req, res){
     Usuario.findByIdAndUpdate(idUsuario, nuevosDatos).exec()
      .then((usuarioActualizado)=>{
          if(!usuarioActualizado){
-             res.status(404).send({message:'no se ha actualizado exitosamente el usuario'})
+             res.status(404).send({message:'No se ha actualizado exitosamente el usuario'})
          }else{
              res.status(200).send({usuario:usuarioActualizado})
          }
@@ -59,7 +59,7 @@ function eliminarUsuario(req,res){
     Usuario.findByIdAndRemove(idUsuario).exec()
     .then((usuarioEliminado)=>{
         if(!usuarioEliminado){
-            res.status(404).send({message:'no se ha eliminado exitosamente el usuario'})
+            res.status(404).send({message:'No se ha eliminado exitosamente el usuario'})
         }else{
             res.status(200).send({usuario:usuarioEliminado})
         }
@@ -82,7 +82,7 @@ function obtenerUsuario(req,res){
         }else{
             if(!usuario){
                 res.status(200).send({
-                    message: "no existe el usuario con el correo"
+                    message: "No existe el usuario con el correo"
                 })
             }else{
                 if(usuario.password != password){
