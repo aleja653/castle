@@ -1,45 +1,59 @@
 .formContainer {
     margin-bottom: 0px;
-}.mainTitle {
+}
+
+.mainTitle {
     font-family: MedievalSharp;
     font-size: 2em;
     text-align: center;
-    color: #FFCC33
-;
-}.textIntro {
+    color: #FFCC33;
+}
+
+.textIntro {
     text-align: center;
-    background-color: #333333
-;
+    background-color: #333333;
     border: none;
-}.card-body {
+}
+
+.card-body {
     background-color: none;
-    border-color: #333333
- !important;
+    border-color: #333333 !important;
     color: white;
-}.avatarForm {
+}
+
+.avatarForm {
     padding: 0px;
     margin: 0px;
-}.avatarForm img {
+}
+
+.avatarForm img {
     padding-left: 10px;
     padding-right: 10px;
     max-width: 100%;
-}.videoContainer {
-    /* background-image: url("../../../assets/img/Recurso1.png"); */
+}
+
+.videoContainer {
+    background-image: url("../../../assets/img/Recurso1.png");
     background-size: cover;
     background-attachment: fixed;
     padding: 5%;
-}.btn-outline-warning {
-    background-color: #FFCC33
-;
+}
+
+.btn-outline-warning {
+    background-color: #FFCC33;
     color: black;
     font-family: 'Roboto', sans-serif;
-}.promoH3{
+}
+
+.promoH3{
     font-family: 'Roboto', sans-serif;
     color: white;
     font-weight: bolder;
     font-size: 3em;
     text-align: center;
-}.promoH4{
+}
+
+.promoH4{
     font-family: 'Roboto', sans-serif;
     color: white;
     font-weight: bolder;
@@ -48,8 +62,12 @@
 }
 .promoParrafo{
     font-family: 'Roboto', sans-serif;
-    color: #FFCC33
-;
+    color: #FFCC33;
     font-size: 1.3em;
     text-align: center;
 }
+
+/* .promoBoton {
+    justify-content: center;
+}
+ */

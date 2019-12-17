@@ -1,0 +1,19 @@
+.bg-light {
+    background-color: #f8f9fa00!important;
+  
+}
+
+a {
+    color: #FFCC33;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 18px;
+}
+
+a:hover{
+    color: rgb(255, 255, 255);
+}
+
+.nav{
+    padding-left: 300px;
+}
