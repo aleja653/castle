@@ -126,6 +126,6 @@ module.exports = {
     eliminarvideo,
     obtenerFicherovideo,
     cargarFicherovideo,
-    obtenervideoes
+    obtenervideos
 }
 
