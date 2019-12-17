@@ -6,12 +6,12 @@ import {ContentIndexComponent} from
 './componentes/content-index/content-index.component';
 import {LoginComponent} from
  './componentes/login/login.component';
-/* import {MainMenuComponent} from 
-'./componentes/main-menu/main-menu.component'; */
+import {HeaderComponent} from 
+'./componentes/header/header.component';
 const appRoutes: Routes = [
     {path: 'login', component:LoginComponent},
     {path: '', component:ContentIndexComponent},
-/*     {path:'menu',component:MainMenuComponent} */
+     {path:'menu',component:HeaderComponent}
 ];
 export const appRoutingProviders: any[] = [];
 export const routing: ModuleWithProviders 
