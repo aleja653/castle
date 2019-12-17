@@ -16,6 +16,7 @@
     "mongoose": "^5.8.1"
   },
   "devDependencies": {
+    "connect-multiparty": "^2.2.0",
     "nodemon": "^2.0.2"
   }
 }

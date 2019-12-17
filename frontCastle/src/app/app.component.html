@@ -1,1 +1,55 @@
+<<<<<<< HEAD
 <app-content-index></app-content-index>
+=======
+<nav class="navbar navbar-dark bg-dark">
+
+    <a [routerLink]="['']" class="navbar-brand"><img src="../assets/logo.png" alt="" width="35%"> </a>
+    <app-header></app-header>
+    <a [routerLink]="['/login']" class="ml-auto" *ngIf="!usuarioLogueado">
+      <button type="button" class="btn btn-outline-warning">Iniciar Sesion</button>
+    </a>
+    
+    <a [routerLink]="" (click)="cerrarSesion()" class="ml-auto" *ngIf="usuarioLogueado">
+      <i class="far fa-user"></i>
+      Cerrar sesiónn
+    </a>
+  </nav>
+  <div>
+      <router-outlet></router-outlet>
+  </div>
+
+  <div id="footer">
+    <div class="container pt-2 d-flex">
+        <h2 class="mr-3">
+           
+        </h2>
+    <div class="pt-2 ml-5">
+        <a href="https://es-la.facebook.com"
+        class="mr-4" target="_blank">
+        <i class="fab fa-facebook-square"></i>
+        Facebook
+        </a>
+
+        <a href="https://twitter.com/?lang=es"
+        class="mr-4" target="_blank">
+        <i class="fab fa-twitter-square"></i>
+        Twitter
+        </a>
+
+        <a href="https://www.instagram.com/?hl-es-la"
+        class="mr-4" target="_blank">
+        <i class="fab fa-instagram"></i>
+        Instagram
+        </a>
+
+    </div>
+    <div class="pt-2 ml-auto">
+        <a class="credits" href="">Créditos</a>
+    </div>
+
+    </div>
+
+</div>
+
+ 
+>>>>>>> 7470c3c6466428b1b2e6a8a4e08120139b4b3a39

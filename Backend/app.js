@@ -5,7 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 var app = express();
 var usuariosRoutes = require('./routes/usuarioRoute');
-var cancionesRoutes = require('./routes/videoRoute');
+var videosRoutes = require('./routes/videoRoute');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -25,7 +25,7 @@ app.use((req,res,next)=>{
     })
 
 app.use('/api',usuariosRoutes);
-app.use('/api',cancionesRoutes);
+app.use('/api',videosRoutes);
 
 module.exports = app;
 
