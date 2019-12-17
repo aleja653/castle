@@ -2,8 +2,18 @@
     background-color: #f8f9fa00!important;
   
 }
-.active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+
+a {
     color: #FFCC33;
+    text-decoration: none;
+    background-color: transparent;
     font-size: 18px;
 }
 
+a:hover{
+    color: rgb(255, 255, 255);
+}
+
+.nav{
+    padding-left: 300px;
+}
