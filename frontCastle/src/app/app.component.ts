@@ -31,5 +31,4 @@ cerrarSesion(){
   localStorage.removeItem("playlist");
   this._router.navigate(['/'])
 }
-
 }
