@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
+import{routing, appRoutingProviders} from './app.routing';
 
 import { AppComponent } from './app.component';
 import { ContentIndexComponent } from './componentes/content-index/content-index.component';
@@ -30,9 +34,12 @@ import { VideosComponent } from './componentes/videos/videos.component';
     VideosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    routing
   ],
-  providers: [],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
