@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    background-color: #333333;
+}
+
+form {
+    background-color: #333333;
+    color: #FFCC33;
+    padding-top: 20px;
+}
+
+input {
+    background-color: #333333 !important;
+    border-color: #FFCC33 !important;
+}

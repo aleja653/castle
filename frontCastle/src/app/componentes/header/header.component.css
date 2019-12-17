@@ -1,0 +1,9 @@
+.bg-light {
+    background-color: #f8f9fa00!important;
+  
+}
+.active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+    color: #FFCC33;
+    font-size: 18px;
+}
+
