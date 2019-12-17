@@ -1,12 +1,18 @@
 .formContainer {
     margin-bottom: 0px;
 }
+.selectorGenero p{
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
 .mainTitle {
     font-family: MedievalSharp;
     font-size: 2em;
     text-align: center;
     color: #FFCC33;
+    padding: 10px;
 }
 
 .textIntro {
@@ -39,12 +45,6 @@
     padding: 5%;
 }
 
-.btn-outline-warning {
-    background-color: #FFCC33;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-}
-
 .promoH3{
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -66,8 +66,38 @@
     font-size: 1.3em;
     text-align: center;
 }
+.faqContainer{
+    padding: 3%;
+}
 
-/* .promoBoton {
+.faq{
+    max-width: 60%;
+    min-width: 60%;
     justify-content: center;
 }
- */
+
+.faqAcordeon{
+    font-family: 'Roboto', sans-serif;
+    background-color: #333333 !important;
+    border: 1px solid #FFCC33 !important;
+}
+
+.faqAcordeon p {
+color: white;
+font-weight: bold;
+}
+
+.accordion .flechaAcordeon{
+    float: right;
+    margin-top: 8px;
+    color: #FFCC33;
+}
+.accordion .preguntaAcordeon{
+    text-decoration: none;
+    align-content: center;    
+    color: #FFCC33;
+}
+.btn-promo{
+    margin-left: 35%;
+
+}
