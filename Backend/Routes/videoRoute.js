@@ -10,7 +10,7 @@ var api = app.Router()
 
  api.post('/video',videoController.crearvideo);
  api.delete('/video/:id',videoController.eliminarvideo);
- api.get('/videos/:genero', videoController.obtenervideos);// esta trayendo todos los videos por genero
+ api.get('/videos/:genero', videoController.obtenervideos);
  api.post('/cargar-fichero-video/:id', md_upload,videoController.cargarFicherovideo);
  api.get('/obtener-fichero-video/:videoFile', md_upload,videoController.obtenerFicherovideo);
 
