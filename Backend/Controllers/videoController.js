@@ -4,10 +4,10 @@
 var fs = require('fs');
 var path = require('path');
 
-const video = require('../models/videoModel')
+const Video = require('../models/videoModel')
 
 function crearvideo(req, res){
-    var video = new video()
+    var video = new Video()
     var params = req.body
     
     video.titulo = params.titulo
@@ -35,7 +35,7 @@ function crearvideo(req, res){
 function eliminarvideo(req,res){
     var idvideo = req.params.id
 
-    video.findByIdAndRemove(idvideo).exec()
+    Video.findByIdAndRemove(idvideo).exec()
     .then((videoEliminada)=>{
         if(!videoEliminada){
             res.status(404).send({message:'no se ha eliminado exitosamente la video'})
@@ -49,7 +49,8 @@ function eliminarvideo(req,res){
 }
 
 function obtenervideos(req,res){
-    video.find((err,videos)=>{
+    var genero= req.params.genero;
+    Video.find({genero:genero},(err,videos)=>{
         if(err){
             res.status(500).send({message: "error en el servidor"
             })
@@ -99,7 +100,7 @@ function cargarFicherovideo(req,res){
         var file_ext = exp_split[1];
 
         if(file_ext == 'mp3'){
-            video.findByIdAndUpdate(idvideo,{archivo:file_name},(err,videoActualizada)=>{
+            Video.findByIdAndUpdate(idvideo,{archivo:file_name},(err,videoActualizada)=>{
                 if(err){
                     res.status(500).send({message:'Error en el servidor'});
                 }else{
@@ -119,7 +120,6 @@ function cargarFicherovideo(req,res){
         res.status(200).send({message:"no ha subido ninguna video"});
     }
 }
-
 
 module.exports = {
     crearvideo,
