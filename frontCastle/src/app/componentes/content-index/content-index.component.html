@@ -1,1 +1,194 @@
-<p>content-index works!(almost)</p>
+<!-- Aquí inicia el slider promocional -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner carousel_h">
+        <div class="carousel-item">
+            <img src="../../../assets/img/cederic-x-21DP3hytVHw-unsplash.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h4>Conviértete en rey o reina</h4>
+                <p class="slider-text">… Y disfruta de tus películas y series favoritas de forma ilimitada</p>
+                <button type="button" class="btn btn-outline-warning">Suscríbete</button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="../../../assets/img/photo-1570610155223-66279ba81b41.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h4>¿Estás listo para la evolución del streaming?</h4>
+                <p class="slider-text">Películas, series y más...</p>
+                <button type="button" class="btn btn-outline-warning">Suscríbete</button>
+            </div>
+        </div>
+        <div class="carousel-item active">
+            <img src="../../../assets/img/hobbit.png" class="d-block w-100" alt="musica-rosa">
+            <div class="carousel-caption d-none d-md-block">
+                <h4>¿Estás listo para la evolución del streaming?</h4>
+                <p class="slider-text">Películas, series y más...</p>
+                <button type="button" class="btn btn-outline-warning">Suscríbete</button>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Aquí inicia el formulario -->
+
+<!--  <div class="col-12">
+            <div class="card">
+                <div class="card-body textIntro">
+                    <h5 class="card-title formTitle">¡Bienvenido a BIT Music!</h5>
+                    <p class="card-text">Disfruta de tu música favorita creando tus propias listas de
+                        reproducción.</p>
+                </div>
+            </div>
+        </div> -->
+<div class="container">
+    <div class="row align-items-end">
+        <div class="col-sm avatarForm">
+            <img src="../../../assets/img/women_thanks.png" alt="">
+        </div>
+        <div class="col-sm">
+            <form #loginForm="ngForm" (ngSubmit)="registrar()" ngNativeValidate>
+                <h2 class="mainTitle">¡Regístrate!</h2>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="Nombre" #nombre="ngModel" name="nombre"
+                        [(ngModel)]="usuario.nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" #correo="ngModel" name="correo"
+                        [(ngModel)]="usuario.correo" required>
+                    <small id="emailHelp" class="form-text text-light">No compartiremos tu email con nadie.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" #password="ngModel"
+                        name="password" [(ngModel)]="usuario.password" required>
+                </div>
+                <div class="input-group selectorGenero">
+                    <div><input type="radio"> </div>
+                    <div>
+                        <p>Dama</p>
+                    </div>
+                    <div><input type="radio"> </div>
+                    <div>
+                        <p>Caballero</p>
+                    </div>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Acepto la Política de Privacidad</label>
+                </div>
+                <button type="submit" class="btn btn-outline-warning">ENVIAR</button>
+                <div *ngIf="registroCorrecto" class="alert alert-success">
+                    {{registroCorrecto}}
+                </div>
+            </form>
+            <br>
+        </div>
+        <div class="col-sm avatarForm">
+            <img src="../../../assets/img/manForm1.png" alt="">
+        </div>
+    </div>
+
+</div>
+<div class="videoContainer">
+
+    <!-- Aquí inicia la sección con vídeo y texto -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 class="mainTitle">ESTRENO ÚLTIMA TEMPORADA</h2>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rlR4PJn8b8I" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="promoH3">SOLO POR HOY</h3>
+                <h4 class="promoH4">$29.999 3/meses</h4>
+                <p class="promoParrafo">TUS SERIES Y PELÍCULAS FAVORITAS</p>
+
+                <a href="#" class="btn btn-outline-warning btn-promo">REGÍSTRATE YA</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Aquí inicia sección FAQ con botones desplegables forma de acordeón -->
+<div>
+    <div class="row justify-content-center faqContainer">
+        <div class="col-12">
+            <h2 class="mainTitle">PREGUNTAS FRECUENTES</h2>
+        </div>
+        <div class="faq">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header faqAcordeon" id="headingOne">
+                        <button class="btn btn-link preguntaAcordeon" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <p>¿Qué es Castle?</p>
+                        </button>
+                        <button class="btn btn-link flechaAcordeon" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <i class="fas fa-angle-down"></i>
+                        </button>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body faqAcordeon">
+                            Castle es la última experiencia en servicios de streaming de vídeo personalizado, con una
+                            oferta variada de películas y series del género medieval-fantástico.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header faqAcordeon" id="headingTwo">
+                        <button class="btn btn-link preguntaAcordeon" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            <p>¿Qué beneficios obtengo pasándome a Premium?</p>
+                        </button>
+                        <button class="btn btn-link flechaAcordeon" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            <i class="fas fa-angle-down"></i>
+                        </button>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body faqAcordeon">
+                            Convirtiéndote en rey o reina tendrás acceso a beneficios Premium como crear una lista de
+                            tus películas y series favoritas, y reproducir vídeo de forma ilimitada y sin
+                            interrupciones.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header faqAcordeon" id="headingThree">
+                        <button class="btn btn-link preguntaAcordeon" type="button" data-toggle="collapse"
+                            data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <p>¿Cómo puedo cambiar mi imagen de perfil?</p>
+                        </button>
+                        <button class="btn btn-link flechaAcordeon" type="button" data-toggle="collapse"
+                            data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <i class="fas fa-angle-down"></i>
+                        </button>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                        data-parent="#accordionExample">
+                        <div class="card-body faqAcordeon">
+                            Puedes cambiar tu imagen de perfil dando click en tu avatar luego de iniciar sesión,
+                            encontrarás la opción “Actualizar mis datos” en la que podrás subir una imagen en formato
+                            .jpg o .png
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
