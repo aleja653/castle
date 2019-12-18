@@ -1,11 +1,8 @@
 'use strict'
-
 //Trabajar con ficheros
 var fs = require('fs');
 var path = require('path');
-
 const video = require('../models/videoModel')
-
 function crearvideo(req, res){
     var video = new video()
     var params = req.body
@@ -18,7 +15,6 @@ function crearvideo(req, res){
     video.temporada = params.temporada
     video.capitulo = params.capitulo
    
-
     video.save()
         .then((videoGuardada) => {
             if (!videoGuardada) {
@@ -31,10 +27,8 @@ function crearvideo(req, res){
             res.status(500).send({ message: 'Error al guardar video' })
         })
 }
-
 function eliminarvideo(req,res){
     var idvideo = req.params.id
-
     video.findByIdAndRemove(idvideo).exec()
     .then((videoEliminada)=>{
         if(!videoEliminada){
@@ -47,7 +41,6 @@ function eliminarvideo(req,res){
         res.status(500).send({message:'Error al eliminar video'})
     })
 }
-
 function obtenervideos(req,res){
     video.find((err,videos)=>{
         if(err){
@@ -56,7 +49,7 @@ function obtenervideos(req,res){
         }else{
             if(!videos){
                 res.status(200).send({
-                    message: "no se pudo obtener las videos"
+                    message: "no se pudo obtener los videos"
                 })
             }else{
                 res.status(200).send({
@@ -82,22 +75,18 @@ function obtenerFicherovideo(req,res){
         }
     });
 }
-
 function cargarFicherovideo(req,res){
     var idvideo = req.params.id;
     var file_name = 'No subido...';
-
     //se valida si viene el archivo con la variable superglobal files
     if(req.files){
         var file_path = req.files.song.path;
         var file_split = file_path.split('\\');
         //se obtiene nombre del archivo
         var file_name = file_split[2];
-
         //se obtiene extension fichero
         var exp_split = file_name.split('\.');
         var file_ext = exp_split[1];
-
         if(file_ext == 'mp3'){
             video.findByIdAndUpdate(idvideo,{archivo:file_name},(err,videoActualizada)=>{
                 if(err){
@@ -119,8 +108,6 @@ function cargarFicherovideo(req,res){
         res.status(200).send({message:"no ha subido ninguna video"});
     }
 }
-
-
 module.exports = {
     crearvideo,
     eliminarvideo,
@@ -128,4 +115,3 @@ module.exports = {
     cargarFicherovideo,
     obtenervideos
 }
-
