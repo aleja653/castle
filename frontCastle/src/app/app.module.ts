@@ -17,6 +17,7 @@ import { PagosComponent } from './componentes/pagos/pagos.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { VideosComponent } from './componentes/videos/videos.component';
+import { MainMenuComponent } from './componentes/main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { VideosComponent } from './componentes/videos/videos.component';
     PagosComponent,
     RegistroComponent,
     HeaderComponent,
-    VideosComponent
+    VideosComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,
