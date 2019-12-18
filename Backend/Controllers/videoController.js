@@ -7,7 +7,7 @@ var path = require('path');
 const video = require('../models/videoModel')
 
 function crearvideo(req, res){
-    var video = new video()
+    var video = new Video()
     var params = req.body
     
     video.titulo = params.titulo
@@ -15,6 +15,7 @@ function crearvideo(req, res){
     video.genero = params.genero
     video.sipnosis = params.sipnosis
     video.clasificacion = params.clasificacion
+    video.imagen = params.imagen
     video.temporada = params.temporada
     video.capitulo = params.capitulo
    
@@ -22,7 +23,7 @@ function crearvideo(req, res){
     video.save()
         .then((videoGuardada) => {
             if (!videoGuardada) {
-                res.status(404).send({ message: 'no se ha creado exitosamente la video' })
+                res.status(404).send({ message: 'no se ha creado exitosamente el video' })
             } else {
                 res.status(200).send({ video: videoGuardada })
             }
@@ -38,7 +39,7 @@ function eliminarvideo(req,res){
     video.findByIdAndRemove(idvideo).exec()
     .then((videoEliminada)=>{
         if(!videoEliminada){
-            res.status(404).send({message:'no se ha eliminado exitosamente la video'})
+            res.status(404).send({message:'no se ha eliminado exitosamente el video'})
         }else{
             res.status(200).send({video:videoEliminada})
         }
@@ -48,34 +49,37 @@ function eliminarvideo(req,res){
     })
 }
 
+
 function obtenervideos(req,res){
-    video.find((err,videos)=>{
+    var genero= req.params.genero;
+    Video.find({genero:genero},(err,videos)=>{
         if(err){
             res.status(500).send({message: "error en el servidor"
             })
         }else{
             if(!videos){
                 res.status(200).send({
-                    message: "no se pudo obtener las videos"
+                    message: "no se pudo obtener los videos"
                 })
             }else{
                 res.status(200).send({
-                    videoes:videos
+                    videos:videos
                 })
             }
         }
     })
 }
+
  
 function obtenerFicherovideo(req,res){
     //nombre fichero
     var videoFile = req.params.videoFile;
     //ruta archivo
-    var path_file = './uploads/videoes/'+songFile;
+    var path_file = './uploads/videos/'+songFile;
     //se comprueba si existe
     fs.exists(path_file,function(exists){
         if(exists){
-            //devolvemos la video
+            //devolvemos el video
             res.sendFile(path.resolve(path_file));
         }else{
             res.status(200).send({message:"no existe el video"});
@@ -104,7 +108,7 @@ function cargarFicherovideo(req,res){
                     res.status(500).send({message:'Error en el servidor'});
                 }else{
                     if(!videoActualizada){
-                        res.status(404).send({message:'No se ha podido actualizar la video'});
+                        res.status(404).send({message:'No se ha podido actualizar el video'});
                     }else{
                         //devuelve la video antes de actualizarse
                         videoActualizada.archivo = file_name;

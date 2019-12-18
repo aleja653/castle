@@ -5,10 +5,10 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CompartidoService {  public cancion = new Subject<any>();
-  public cancionEmitida = this.cancion.asObservable();
-  emitirCancion(url:any){
-    this.cancion.next(url);
+export class CompartidoService {  public video = new Subject<any>();
+  public videoEmitida = this.video.asObservable();
+  emitirVideo(url:any){
+    this.video.next(url);
     }
 
   public logue = new Subject<any>();

@@ -8,15 +8,22 @@ import { LoginComponent } from
     './componentes/login/login.component';
 import {VideosComponent} from 
 './componentes/videos/videos.component';
+
+
+import {CatalogoComponent} from 
+'./componentes/catalogo/catalogo.component';
+
 import { MainMenuComponent } from
     './componentes/main-menu/main-menu.component';
+
 import {PlanesHomeComponent} from
  './componentes/planes-home/planes-home.component';
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: '', component: ContentIndexComponent },
     { path:'menu',component:MainMenuComponent },
-    { path:'videos',component:VideosComponent },
+    { path:'video',component:VideosComponent },
+    {path:'catalogo',component:CatalogoComponent},
     {path:'planes',component:PlanesHomeComponent}
 ];
 export const appRoutingProviders: any[] = [];

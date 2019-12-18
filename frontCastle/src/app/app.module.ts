@@ -18,6 +18,7 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { VideosComponent } from './componentes/videos/videos.component';
 import { MainMenuComponent } from './componentes/main-menu/main-menu.component';
+import { SlidercatalogoComponent } from './componentes/slidercatalogo/slidercatalogo.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MainMenuComponent } from './componentes/main-menu/main-menu.component';
     RegistroComponent,
     HeaderComponent,
     VideosComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    SlidercatalogoComponent
   ],
   imports: [
     BrowserModule,

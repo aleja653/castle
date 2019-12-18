@@ -5,5 +5,14 @@
         <button class="btn btn-primary btn-outline-warning" (click)="modificar('2')">Mi perfil</button>
         <button class="btn btn-primary btn-outline-warning" (click)="modificar('3')">Buscar película</button>
     </div>
-
-<app-user-profile></app-user-profile>
+    <div class="row">
+        <div class="col-6">
+            <!-- <app-song-tools *ngIf="cambiar == '1'"></app-song-tools> -->
+            <app-user-profile *ngIf="cambiar == '2'"></app-user-profile>
+            <!-- <app-menu-song *ngIf="cambiar == '3'"></app-menu-song> -->
+        </div>
+        <!-- <div class="col-6 player">
+            <app-player></app-player>
+        </div> -->
+    </div>
+</div>
