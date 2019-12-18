@@ -27,6 +27,14 @@
     color: white;
 }
 
+.fixed-bottom img{
+    display: block;
+    max-width: 120px;
+    margin-top: 80%; 
+    margin-bottom: 40px;
+    margin-left: 90%;
+}
+
 .avatarForm {
     padding: 0px;
     margin: 0px;
@@ -68,6 +76,7 @@
 }
 .faqContainer{
     padding: 3%;
+    padding-bottom: 5%;
 }
 
 .faq{
@@ -100,4 +109,14 @@ font-weight: bold;
 .btn-promo{
     margin-left: 35%;
 
+}
+
+.textoSlider, .slider-text{
+    text-shadow: 1px 1px #333333;
+}
+
+.selectCorreo{
+    border: #FFCC33;
+    background-color: #333333;
+    margin-top:6px;
 }
