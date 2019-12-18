@@ -34,3 +34,10 @@ cerrarSesion(){
 }
 
 
+/* Estes es el componente de catalogo */
+@Component({
+  selector: 'app-slider',
+  templateUrl: './slider.component.html',
+  styleUrls: ['./slider.component.css']
+})
+
