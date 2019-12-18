@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from  '../../modelos/usuarios';
 
 @Component({
   selector: 'app-main-menu',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-menu.component.css']
 })
 export class MainMenuComponent implements OnInit {
+  usuario: Usuario;
+  cambiar = '2';  
+  constructor() {
+    this.usuario = JSON.parse(localStorage.getItem('sesion'));
+   }
+    
+    modificar(numero){
+      this.cambiar= numero;
+    }
 
-  constructor() { }
+    ngOnInit() {
+      document.getElementById('footer').classList.add("fixed-bottom");
+    }
 
-  ngOnInit() {
-  }
 
 }

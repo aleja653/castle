@@ -9,6 +9,7 @@ export class Video {
         public clasificación: String,
         public temporada: String,
         public capitulo: String,  
+        public imagen: String,  
         public archivo: String //cuidado porque en usuario este se llama archivo y a veces lo llamamos mal
     ) {}
  

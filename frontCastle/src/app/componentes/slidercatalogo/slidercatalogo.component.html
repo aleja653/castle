@@ -1,0 +1,21 @@
+<div class="song-title">
+    <div class="forma">
+        {{genero}}
+        <ul class="list-group " *ngIf="existenVideos">
+            <li class="list-group-item list-group-item-light d-flex justify-content-between list-songs"
+                *ngFor="let video of videos">
+                {{video.titulo + ' - ' + video.artista + ' - ' + video.genero + ' - ' + video.duracion}}
+                <div class="ml-auto">
+                    <a data-toggle="modal" href="#modal" class="iconovideo"
+                        (click)="agregarListaReproduccion(video)">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                    <a data-toggle="modal" href="#modal" *ngIf="usuario.role == 'ROLE_ADMIN'" class="iconovideo ml-2"
+                        (click)="eliminarvideo(video)">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -8,7 +8,7 @@ var port = 3977 /* comentario para prueba GitHub */
 //.connect(parametro1,parametro2) nos permite la conexión a MongoDB
 mongoose.connect('mongodb://localhost:27017/Castle',(err,res)=>{
     if(err){
-        console.log('la prueba reina')
+        console.log('No se puede conectar a la bd')
     }else{
         console.log("Conexión a la base de datos")
         //listen() --> forma para inicializar un servidor
