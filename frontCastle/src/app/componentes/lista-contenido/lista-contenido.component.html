@@ -1,0 +1,40 @@
+<div class="video-title">
+    <h2>Contenido</h2>
+    <div class="form">
+        <ul class="list-group " *ngIf="existenVideos">
+            <li class="list-group-item list-group-item-light d-flex justify-content-between list-songs"
+                *ngFor="let video of videos">
+                {{video.titulo + ' - ' + video.genero}}
+                <div class="ml-auto">
+                    <a data-toggle="modal" href="#modal" class="iconoCancion"
+                        (click)="agregarListaReproduccion(video)">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                    <a data-toggle="modal" href="#modal" *ngIf="usuario.role == 'ROLE_ADMIN'" class="iconoCancion ml-2"
+                        (click)="eliminarVideo(Video)">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!--este modal no es necesario para el funcionamiento, solo es informativo-->
+<div class="modal fade bd-example-modal-sm text-dark" id="modal" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Aviso!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{avisoVideos}}
+            </div>
+        </div>
+    </div>
+</div>

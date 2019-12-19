@@ -1,1 +1,76 @@
-<p>eventos works!</p>
+<!-- caballero sticky -->
+<div class="fixed-bottom">
+    <div>
+        <img src="../../../assets/img/caballo.gif" alt="">
+    </div>
+</div>
+<div class="fixed-bottom">
+    <div>
+        <a [routerLink]="['/planes']"> <img src="../../../assets/img/bandera-suscribete(1).png" alt=""></a>
+    </div>
+</div>
+<!-- Este Div es para que el header no oculte el slider -->
+<div class="espacioHeader"></div>
+<!-- Aquí inicia el slider promocional -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner carousel_h">
+        <div class="carousel-item">
+            <img src="../../../assets/img/slidereventmonster.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h4 class="textoSliderEvento">Siente la acción</h4>
+                <p class="slider-textEvento">Próximamente maratón de realidad virtual medieval</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="../../../assets/img/slidereventcity.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h4 class="textoSliderEvento">Vive la comunidad</h4>
+                <p class="slider-textEvento">Registrate como Rey o Reina y Participa del campeonato gamer medieval en Noruega</p>
+            </div>
+        </div>
+        <div class="carousel-item active">
+            <img src="../../../assets/img/slidereventarmadura.png" class="d-block w-100" alt="musica-rosa">
+            <div class="carousel-caption d-none d-md-block">
+                <h4 class="textoSliderEvento">Prográmate y acompáñanos</h4>
+                <p class="slider-textEvento">Descuentos exclusivos, usuario Rey o Reina</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div><!-- Aquí inicia sección de informacion de eventos -->
+<div class="container">
+    <div class="row">
+      <div class="col-6">
+      <h2 class="mainTitle">Calendario 2019</h2>
+      <h3 class="ciudadEvento">Bogota</h3>
+      <p class="eventBody">
+        • SOFA 2020: Cod promocional VIPZONE4596 <br>
+        • Comicon Colombia 2020: Cod promocional VIPZONE4596 <br>
+    </p>      <h2 class="mainTitle">Calendario 2020</h2>
+      <h3 class="ciudadEvento">Medellin</h3>
+      <p class="eventBody">
+        • SOFA 2020: Cod promocional VIPZONE4596 <br>
+        • Maratón de realidad virtual medieval (gratuito para usuarios Rey o Reina) <br>
+        • Misión Evento Medieval Noruega (regístrate como Rey o Reina y participa por un pase doble )
+    </p>
+    </div>
+      <div class="col-2"></div>
+      <div class="col-4 boletas">
+        <div>
+            <a class="btn btn-outline-warning btn-promo" href="https://vive.tuboleta.com/" target="_blank"> Quiero boletas</a>
+        </div>
+        <div>
+            <p class="eventBody">No olvides utilizar el cod promocional por evento</p>
+        </div>
+        
+      </div>
+    
+    </div>
+  </div>

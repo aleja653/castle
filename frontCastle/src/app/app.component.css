@@ -1,29 +1,95 @@
-#footer{
+.navbar {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+#footer {
     background-color: #343a40!important;
     color: white;
 }
 
-a{
+a {
     text-decoration: none;
     /* color: white; */
-    color:  #FFCC33;
+    color: #FFCC33;
 }
 
-a .fab{
+a .fab {
     color: white;
 }
 
-.credits{
+.credits {
     color: white;
 }
 
-.btn-outline-warning{
-    background:#FFCC33 ;
+.btn-outline-warning {
+    background: #FFCC33;
     color: black;
 }
 
-.btn-outline-warning:hover{
-    background:rgba(255, 255, 255, 0);
+.btn-outline-warning:hover {
+    background: rgba(255, 255, 255, 0);
     color: white;
 }
 
+.bg-light {
+    background-color: #f8f9fa00!important;
+}
+
+.navbar-nav a {
+    color: #FFCC33;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 18px;
+    text-align: right;
+}
+
+/* .nav-item:hover {
+    background-color: #343a40;
+}
+ */
+
+.navbar-toggler {
+    border: none;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.logoCastle {
+    display: flex;
+    height: 30%;
+    width: auto;
+}
+
+.mb-3, .my-3 {
+    margin-bottom: 0rem !important;
+}
+
+@media screen and (min-width:1000px) {}
+
+@media screen and (max-width:1000px) {
+    .navbar-nav a {
+        font-size: 1em;
+        text-align: center;
+    }
+    .botonSesion {
+        margin-right: 33%;
+        min-width: 200px;
+    }
+    .btn-outline-warning {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .botonSesion {
+        margin-right: 36%;
+        font-size: 0.8em;
+    }
+    .btn-outline-warning {
+        font-size: 1em;
+    }
+}

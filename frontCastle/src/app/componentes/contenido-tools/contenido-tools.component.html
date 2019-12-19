@@ -1,0 +1,38 @@
+<form #updateForm="ngForm" (ngSubmit)="manejoVideo()" ngNativeValidate>
+    <h2 class="title_form">{{ tituloComponente }}</h2>
+    <div class="form-group">
+        <label for="nombre">Título:</label>
+        <input type="text" class="form-control" id="Titulo" #titulo="ngModel" name="titulo" [(ngModel)]="video.titulo"
+            required [disabled]="cargarFichero">
+    </div>
+    <div class="form-group">
+        <label for="nombre">Sinopsis:</label>
+        <input type="text" class="form-control" id="Sinopsis" name="sinopsis" #sinopsis="ngModel"
+            [(ngModel)]="video.sinopsis" [disabled]="cargarFichero" required>
+    </div>
+    <div class="form-group">
+        <label for="nombre">Género:</label>
+        <input type="text" class="form-control" id="Genero" #genero="ngModel" name="genero" [(ngModel)]="video.genero"
+            [disabled]="cargarFichero" required>
+    </div>
+    <br>
+    <div class="input-group">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
+                placeholder="Subir fichero" (change)="fileChangeEvent($event)">
+            <label class="custom-file-label" for="inputGroupFile04">Seleccione el archivo</label>
+        </div>
+        <!-- <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+        </div> -->
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary btn-outline-warning">{{ tituloComponente }}</button>
+    <div *ngIf="videoCorrecto" class="alert alert-danger d-flex align-items-center">
+        {{videoCorrecto}}
+        <div class="spinner-border ml-auto" *ngIf="actualizacionCorrecta"
+        role="status" aria-hidden="true"></div>
+    </div>
+</form>
+
+<br><br><br><br>

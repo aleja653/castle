@@ -1,0 +1,161 @@
+.espacioHeader {
+    height: 120px;
+}
+
+.video{
+    width: 85%;
+    margin-top: 10%;
+    margin-left: 5%;
+    
+}
+
+h1{
+    text-align: center;
+    color: black;
+    margin-right: -57%;
+    margin-top: 4%;
+   
+}
+.title{
+    margin-left: 9%;
+    margin-bottom: -10%;
+    padding-top: 4%;
+    padding-bottom: 1%;
+    color: #FFCC33;
+    font-family: MedievalSharp;
+
+}
+.btn{
+    margin-left: 60%;
+    margin-bottom: -11%;
+ 
+
+}
+.sinopsis{
+    margin-top:15% ;
+    margin-right: 5%;
+    color: #FFCC33;
+    font-family: MedievalSharp;
+}
+.mainTitle{
+    color: #FFCC33;
+    font-family: MedievalSharp;
+    padding: unset;
+}
+
+.parrafo{
+    text-align: justify;  
+    margin-right: 15%;  
+    color: white;
+}
+.selectCorreo select{
+    border-color: #FFCC33 !important;
+    background-color: #333333 !important;
+    margin-top:-1%;
+    color: #FFCC33;
+
+}
+.promoParrafo{
+    font-family: 'Roboto', sans-serif;
+    color: #FFCC33;
+    font-size: 1.3em;
+    text-align: center;
+}
+.faqContainer{
+    padding: 3%;
+    padding-bottom: 5%;
+}
+
+.faq{
+    max-width: 60%;
+    min-width: 60%;
+    margin-left: -40%;
+}
+
+.faqAcordeon{
+    font-family: 'Roboto', sans-serif;
+    background-color: #333333 !important;
+    border: 1px solid #FFCC33 !important;
+    min-width: 60%;
+    color:  #FFCC33;
+    text-decoration: none;
+   max-width: 60%;
+    min-width: 100%; 
+}
+.faqAcordeon a{
+    text-decoration: none;
+    color:  #FFCC33;
+}
+.faqAcordeon p {
+color: white;
+text-align:center;
+}
+
+.accordion .flechaAcordeon{
+    float: right;
+    color: #FFCC33;
+    margin-top: -10%;
+}
+.accordion .preguntaAcordeon{
+    text-decoration: none;
+    align-content: center;    
+    color: #FFCC33;
+}
+.btn-promo{
+    margin-left: 35%;
+
+}
+
+.textoSlider, .slider-text{
+    text-shadow: 1px 1px #333333;
+}
+
+.selectCorreo{
+    border: #FFCC33;
+    background-color: #333333;
+    margin-top:6px;
+}
+.preguntaAcordeon{
+    text-align: justify;
+    margin-left: -5%;
+    margin-top: -5%;
+
+}
+
+@media screen and (min-width:1000px) {
+   
+}
+
+@media screen and (max-width:1000px) {
+    .row{
+        display: inherit;
+    }
+    .col-5{
+        max-width: 100% !important;
+        margin-left: 5%;
+    }
+    .col-7{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .contenedorVideo{
+        overflow-x: hidden;
+    }
+    .espacioHeader {
+        height: 80px;
+    }
+}
+
+@media screen and (max-width:750px) {
+   .row{
+       display: inherit;
+   }
+   .col-5{
+       max-width: 100% !important;
+       margin-left: 5%;
+   }
+   .contenedorVideo{
+       overflow-x: hidden;
+   }
+}
+

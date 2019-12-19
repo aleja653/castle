@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../../modelos/usuarios';
-import { UsuarioService } from '../../servicios/usuario.service';
-
+import { Usuario } from 'src/app/modelos/usuarios';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -31,16 +30,7 @@ export class UserProfileComponent implements OnInit {
             this._usuarioService.cargarImagenUsuario(this.filesToUpload, this.usuario._id).subscribe(
               (response: any) => {
                 if (response.usuario) {
-                  this.actualizacionCorrecta = "DATOS ACTUALIZADOS CORRECTAMENTE";
-                  // Swal.fire({
-                  //   position: 'center',
-                  //   icon: 'success',
-                  //   html:'<div class= swal>'+this.actualizacionCorrecta+'</div>',
-                  //   showConfirmButton: false,
-                  //   width: 400,
-                  //   background: 'rgba(0, 0, 0, 0.911)',
-                  //   timer: 4500 
-                  // })
+                  this.actualizacionCorrecta = "Datos actualizados correctamente";
                   this.usuario = response.usuario;
                   localStorage.setItem("sesion", JSON.stringify(this.usuario));
                 } else {

@@ -1,46 +1,136 @@
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Temporadas
-  </button>
-       <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-       <li class="dropdown-submenu">
-       <a class="dropdown-item" tabindex="-1" >More options 
-        <li class="menú desplegable" role="menu" aria-labelledby="dLabel">
-          <a  tabindex="-1" >More options</a> 
-        </li>
-       </a>
-        </li>
-       
-       <li class="dropdown-submenu">
-       <a class="dropdown-item" tabindex="-1" >More options</a>
-       </li>
-        <li class="dropdown-submenu">
-    <a class="dropdown-item" tabindex="-1" >More options</a>
-  </li>
-</ul>
-</div>
+<!-- Este Div es para que el header no oculte el slider -->
+<div class="espacioHeader"></div>
+<div class="row contenedorVideo">
+    <div class="col-7">
+<div>
+        <h2 class="title">{{video.titulo}}</h2>
+    </div>
+    <div>
+        <button type="button" class="btn btn-outline-warning">AÑADIR A FAVORITOS</button>
+    </div>
+        <div class="embed-responsive embed-responsive-16by9  video">
+            <video autoplay controls loop class="embed-responsive-item">
+                <source src="../../../assets/Game of Thrones _ Season 8 _ Official Trailer (HBO).mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="col-5 contenedorDetalles">
+
+        <h3 class="sinopsis">SINOPSIS</h3>
+
+        <p class="parrafo">
+            <!-- {{video.sipnosis}} -->Juego de tronos (título original en inglés: A Game of Thrones) es una novela de
+            fantasía escrita por el autor estadounidense George R. R. Martin en 1996 y ganadora del Premio Locus a la
+            mejor novela de fantasía en 1997. Se trata de la primera entrega de la serie de gran popularidad Canción de
+            hielo y fuego. La novela se caracteriza por su estética medieval,1​ la descripción de numerosos personajes
+            bien detallados, la contraposición de puntos de vista de los múltiples protagonistas, su trama con giros
+            inesperados y un uso sutil y moderado de los aspectos mágicos tan comunes en otras obras de fantasía
+            heroica.</p>
 
 
-<br><br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
+        <div>
+            <div class="row justify-content-center faqContainer">
+                <div class="col-12 mainTitle">
+                    <h3>TEMPORADAS</h3>
+                </div>
+                <div class="faq">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header faqAcordeon" id="headingOne">
+                                <button class="btn btn-link preguntaAcordeon" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <p class="acordeonparrafo">Temporada 1</p>
+                                </button>
+                                <button class="btn btn-link flechaAcordeon" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fas fa-angle-down"></i>
+                                </button>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="card-body faqAcordeon"><a href="#">
+                                        {{video.capitulo}}
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="card-body faqAcordeon">
+                                    <a href="#">
+                                        capitulo 2
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="card-body faqAcordeon">
+                                    <a href="#">
+                                        capitulo 3
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-
-    <!-- <div  class="embed-responsive embed-responsive-16by9">
-      <video autoplay controls loop class="embed-responsive-item">
-          <source src="../../../assets/Game of Thrones _ Season 8 _ Official Trailer (HBO).mp4" type="video/mp4">
-      </video>
-</div>  -->
-
-
-
-
-
+                        <div class="card">
+                            <div class="card-header faqAcordeon" id="headingTwo">
+                                <button class="btn btn-link preguntaAcordeon" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    <p>Temporada 2</p>
+                                </button>
+                                <button class="btn btn-link flechaAcordeon" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    <i class="fas fa-angle-down"></i>
+                                </button>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordionExample">
+                                <div class="card-body faqAcordeon">
+                                    Capitulo 1
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordionExample">
+                                <div class="card-body faqAcordeon">
+                                    Capitulo 2
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordionExample">
+                                <div class="card-body faqAcordeon">
+                                    Capitulo 3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header faqAcordeon" id="headingThree">
+                                <button class="btn btn-link preguntaAcordeon" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    <p>Temporada 3</p>
+                                </button>
+                                <button class="btn btn-link flechaAcordeon" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    <i class="fas fa-angle-down"></i>
+                                </button>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordionExample">
+                                <div class="card-body faqAcordeon">
+                                    Capitulo 1
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordionExample">
+                                <div class="card-body faqAcordeon">
+                                    Capitulo 2
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordionExample">
+                                <div class="card-body faqAcordeon">
+                                    Capitulo 3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

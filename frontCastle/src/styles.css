@@ -9,7 +9,9 @@ form {
     color: #FFCC33;
     padding-top: 20px;
 }
-
+.form-control{
+    color: white !important;
+}
 input {
     background-color: #333333 !important;
     border-color: #FFCC33 !important;

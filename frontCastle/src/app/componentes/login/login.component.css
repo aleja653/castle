@@ -1,0 +1,39 @@
+.espacioHeader {
+    height: 100px;
+}
+form {
+    background-color: rgba(51, 51, 51, 0.9);
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 3%;
+}
+
+.row {
+    height: 600px;
+}
+
+@media screen and (min-width:1000px) {}
+
+@media screen and (max-width:1000px) {
+    .espacioHeader {
+        height: 80px;
+    }
+    form {
+        width: 100%;
+        padding: 5%;
+
+    }
+.columnaLogin{
+    display: none;
+}
+}
+
+@media screen and (max-width:750px) {
+    form {
+        width: 100%;
+        text-align: center;
+
+    }
+
+}

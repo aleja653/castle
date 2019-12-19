@@ -19,6 +19,8 @@ import { HeaderComponent } from './componentes/header/header.component';
 import { VideosComponent } from './componentes/videos/videos.component';
 import { MainMenuComponent } from './componentes/main-menu/main-menu.component';
 import { SlidercatalogoComponent } from './componentes/slidercatalogo/slidercatalogo.component';
+import { ContenidoToolsComponent } from './componentes/contenido-tools/contenido-tools.component';
+import { ListaContenidoComponent } from './componentes/lista-contenido/lista-contenido.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { SlidercatalogoComponent } from './componentes/slidercatalogo/slidercata
     HeaderComponent,
     VideosComponent,
     MainMenuComponent,
-    SlidercatalogoComponent
+    SlidercatalogoComponent,
+    ContenidoToolsComponent,
+    ListaContenidoComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ export class Usuario {
         public password: String,
         public imagen: String,
         public role: String,
+        public genero: String,
         public plan: String,
         public metodoPago: String,
         public numtarjeta: String,

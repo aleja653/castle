@@ -9,6 +9,7 @@ var usuarioSchema = Schema({
     password: String,
     imagen: String,
     role: String,
+    genero: String,
     plan: String,
     metodoPago: String,
     numtarjeta: String,

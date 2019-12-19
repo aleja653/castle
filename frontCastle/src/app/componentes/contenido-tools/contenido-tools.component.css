@@ -1,5 +1,6 @@
 form{
     margin-top: 5%;
+    /* padding: 7%; */
 }
 
 .custom-file-input{
@@ -14,6 +15,3 @@ form{
     /* display: inline-block; */
 }
 
-.img_box{
-    width: 100px;
-}

@@ -7,7 +7,7 @@ var videoSchema = Schema({
     duracion: String,
     genero: String,
     sinopsis: String,
-    clasificación: String,
+    clasificacion: String,
     temporada: String,
     capitulo: String,  
     archivo: String

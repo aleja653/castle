@@ -1,64 +1,159 @@
-* {
+.espacioHeader {
+    height: 120px;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #FFCC33;
     font-family: MedievalSharp;
-    color: #FFCC33
-;
-}h2 {  font-size: 2em;
-text-align: center;
-}b {
-font-size: 1em;
-text-align: center;
-margin-bottom: .5rem;
-font-family: 'Roboto', sans-serif;
-font-weight: lighter;
-}.btn-outline-warning{
-    
-    background:rgba(255, 255, 255, 0);
-    color: black;
-}.btn-outline-warning:hover{
-    
-    color: white;
-    background:#FFCC33 ;
-}img {
-    width: 50%;
-}.fondo {
-    background-image: url("../../../assets/img/Recurso1.png");
+}
+
+p {
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: .5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    color: #FFCC33;
+  
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.pse{
+    width: auto;
+    margin-left: 7%;
+}
+
+.fondo {
+    background-image: url("../../../assets/img/planes_fondo.png");
     background-size: cover;
     background-attachment: fixed;
     padding: 1%;
     padding-inline: 1%;
-}.container_planes {
-   width: 70% ;
-   display: flex;
-   position: relative;
-   left: 15%;
-}.card {
-    text-align: center;
-    background-color: #212529
-;
 }
+
+.container_planes {
+    width: 80%;
+    display: flex;
+    position: relative;
+    left: 10%;
+}
+
+.card {
+    text-align: center;
+    background-color: rgba(51, 51, 51, 0.9);
+    width: 60%;
+    padding-top: 2%;
+    border: none;
+
+}
+.tarjetaPlanes{
+    width:70%;
+}
+
+.list-group-item {
+    font-family: 'Roboto', sans-serif;
+    color: #FFCC33;
+}
+
+.card-text {
+    font-family: 'Roboto', sans-serif;
+    color: #FFCC33;
+}
+
 .card img {
     position: relative;
-    align-self: center;
-}.modal-body {
-    background-color: #333333
- !important;
+    align-self: center
 }
-.modal-body img{
-    background-color: #333333
- !important;
+
+.modal-body {
+    /* background-color: #333333
+; */
+    font-family: 'Roboto', sans-serif;
+    background-color: #333333;
+    background-size: cover;
+    background-attachment: inherit;
+}
+
+.modal-body img {
     position: relative;
-    align-self: center;
-}.modal-header {
-    
-    background-color: #333333
- !important;
+    align-self: center
 }
-.modal-footer    {
-    
-    background-color: #333333
- !important;
+
+.modal-header {
+    background-color: #333333;
+    text-align: center
 }
+
+.modal-header h5 {
+    text-align: center
+}
+
+.modal-footer {
+    background-color: #333333 !important;
+}
+
 .planes_texto {
     text-align: center;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
+    width: 70%;
+    color: #FFCC33;
+
+
+}
+
+.list-group-item {
+    background-color: #333333;
+    color: white;
+}
+
+.img_modal_planes {
+    margin-left: 25%;
+}
+
+h5{
+    color: white;
+}
+
+@media screen and (min-width:1000px) {}
+
+@media screen and (max-width:1000px) {
+    .tarjetaPlanes{
+        width:80%;
+        align-items: center;
+    }
+    .espacioHeader {
+        height: 80px;
+    }
+
+}
+
+@media screen and (max-width:750px) {
+    .container_planes {
+        overflow-x:hidden;
+        display: flex;
+        position: relative;
+        left: 20%;
+    }
+    
+    .card {
+        text-align: center;
+        background-color: rgba(51, 51, 51, 0.9);
+        width: 100%;
+        padding-top: 2%;
+        border: none;
+    
+    }
+    .tarjetaPlanes{
+        width:70%;
+        align-items: center;
+    }
+    .espacioHeader {
+        height: 110px;
+    }
 }
