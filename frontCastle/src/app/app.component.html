@@ -1,6 +1,6 @@
-<nav class="navbar navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-dark bg-dark">
 
-  <a [routerLink]="['']" class="navbar-brand"><img src="../assets/logo.png" alt="" width="50%"> </a>
+  <a [routerLink]="['']" class="navbar-brand"><img src="../assets/logo.png" alt="" width="30%"> </a>
   <app-header></app-header>
   <a [routerLink]="['/login']" class="ml-auto" *ngIf="!usuarioLogueado">
     <button type="button" class="btn btn-outline-warning">Iniciar Sesión</button>
@@ -10,41 +10,71 @@
     <i class="far fa-user"></i>
     Cerrar Sesión
   </a>
+</nav> -->
+<!-- header -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3 menuHeader">
+  <div class="container-fluid">
+    <div class="logoCastle">
+      <a [routerLink]="['']" class="navbar-brand mr-3"> <img src="../../../assets/logo.png" alt="" width="40%"></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav">
+              <a href="#" class="nav-item nav-link">Home</a>
+              <a href="#" class="nav-item nav-link">Regístrate</a>
+              <a [routerLink]="['/quienes']" class="nav-item nav-link">Nosotros</a>
+              <a [routerLink]="['/planes']" class="nav-item nav-link">Planes</a>
+              <a [routerLink]="['/eventos']" class="nav-item nav-link">Eventos</a>
+          </div>
+          <div class="navbar-nav ml-auto botonSesion">
+            <a [routerLink]="['/login']" class="ml-auto" *ngIf="!usuarioLogueado">
+              <button type="button" class="btn btn-outline-warning">Iniciar Sesión</button>
+            </a>
+            <a [routerLink]="" (click)="cerrarSesion()" class="ml-auto" *ngIf="usuarioLogueado">
+              <i class="far fa-user"></i>
+              Cerrar Sesión
+            </a>
+          </div>
+      </div>
+  </div>    
 </nav>
-<div>
-    <router-outlet></router-outlet>
+<div class="bodyCastle">
+  <router-outlet></router-outlet>
 </div>
 
 <div id="footer">
-  <div class="container pt-2 d-flex">
-      <h2 class="mr-3">
-         
-      </h2>
-  <div class="pt-2 ml-5">
-      <a href="https://www.facebook.com/castlepeliculas/"
-      class="mr-4" target="_blank">
-      <i class="fab fa-facebook-square"></i>
-      Facebook
-      </a>
+<div class="container pt-2 d-flex">
+    <h2 class="mr-3">
+       
+    </h2>
+<div class="pt-2 ml-5">
+    <a href="https://www.facebook.com/castlepeliculas/"
+    class="mr-4" target="_blank">
+    <i class="fab fa-facebook-square"></i>
+    Facebook
+    </a>
 
-      <a href="https://twitter.com/castlepeliculas"
-      class="mr-4" target="_blank">
-      <i class="fab fa-twitter-square"></i>
-      Twitter
-      </a>
+    <a href="https://twitter.com/castlepeliculas"
+    class="mr-4" target="_blank">
+    <i class="fab fa-twitter-square"></i>
+    Twitter
+    </a>
 
-      <a href="https://www.instagram.com/castlepeliculas/"
-      class="mr-4" target="_blank">
-      <i class="fab fa-instagram"></i>
-      Instagram
-      </a>
+    <a href="https://www.instagram.com/castlepeliculas/"
+    class="mr-4" target="_blank">
+    <i class="fab fa-instagram"></i>
+    Instagram
+    </a>
 
-  </div>
-  <div class="pt-2 ml-auto">
-      <a class="credits" href="">Créditos</a>
-  </div>
+</div>
+<div class="pt-2 ml-auto">
+    <a class="credits" href="">Créditos</a>
+</div>
 
-  </div>
+</div>
 
 </div>
 

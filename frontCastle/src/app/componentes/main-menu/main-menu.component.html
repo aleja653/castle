@@ -1,15 +1,22 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="container">
     <div class="buttons_menu">
-        <button class="btn btn-primary btn-outline-warning" (click)="modificar('1')">Crear película</button>
-        <!-- <button class="btn btn-primary" (click)="modificar('1')" *ngIf="usuario.role == 'ROLE_ADMIN'">Crear canciones</button> -->
+        <button class="btn btn-primary btn-outline-warning" (click)="modificar('1')">Crear contenido</button>
         <button class="btn btn-primary btn-outline-warning" (click)="modificar('2')">Mi perfil</button>
-        <button class="btn btn-primary btn-outline-warning" (click)="modificar('3')">Buscar película</button>
+        <button class="btn btn-primary btn-outline-warning" (click)="modificar('3')">Lista de contenido</button>
     </div>
     <div class="row">
         <div class="col-6">
-            <!-- <app-song-tools *ngIf="cambiar == '1'"></app-song-tools> -->
+            <app-contenido-tools *ngIf="cambiar == '1'"></app-contenido-tools>
             <app-user-profile *ngIf="cambiar == '2'"></app-user-profile>
-            <!-- <app-menu-song *ngIf="cambiar == '3'"></app-menu-song> -->
+            <app-lista-contenido *ngIf="cambiar == '3'"></app-lista-contenido>
         </div>
         <!-- <div class="col-6 player">
             <app-player></app-player>

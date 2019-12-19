@@ -16,16 +16,20 @@ import {PlanesHomeComponent} from
  './componentes/planes-home/planes-home.component';
 import {QuienesSomosComponent} from
  './componentes/quienes-somos/quienes-somos.component';
+ import {EventosComponent} from
+ './componentes/eventos/eventos.component';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: '', component: ContentIndexComponent },
     { path:'menu',component:MainMenuComponent },
     { path:'video',component:VideosComponent },
-    {path:'catalogo',component:CatalogoComponent},
-    {path:'planes',component:PlanesHomeComponent},
-    {path:'quienes',component:QuienesSomosComponent}
+    { path:'catalogo',component:CatalogoComponent },
+    { path:'planes',component:PlanesHomeComponent },
+    { path:'quienes',component:QuienesSomosComponent },
+    { path:'eventos',component:EventosComponent }
 ];
 export const appRoutingProviders: any[] = [];
 export const routing: ModuleWithProviders
     = RouterModule.forRoot(appRoutes); 
+

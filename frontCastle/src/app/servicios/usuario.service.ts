@@ -77,4 +77,16 @@ export class UsuarioService {
     ).pipe(map(res => res));
   }
 
+  actualizarUsuarioRol(id, usuario) {
+    let params = JSON.stringify(usuario);
+    let options = {
+      headers: new HttpHeaders(
+        {'Content-Type': 'application/json'})};
+    return this._http.put(
+      this.url + 'usuario/' + id,
+      params,
+      options
+    ).pipe(map(res => res));
+  }
+
 }

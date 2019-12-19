@@ -15,7 +15,7 @@ function crearUsuario(req, res){
     usuario.correo = params.correo
     usuario.password = params.password
     usuario.imagen = params.imagen
-    usuario.role = params.role
+    usuario.role = 'ROLE_REY'
     usuario.plan = params.plan
     usuario.metodoPago = params.metodoPago
     usuario.numtarjeta = params.numtarjeta
@@ -77,7 +77,7 @@ function obtenerUsuario(req,res){
     (err,usuario)=>{
         if(err){
             res.status(500).send({
-                message: "error en el servidor"
+                message: "Error en el servidor"
             })
         }else{
             if(!usuario){
@@ -87,7 +87,7 @@ function obtenerUsuario(req,res){
             }else{
                 if(usuario.password != password){
                     res.status(200).send({
-                        message: "contraseña errada"
+                        message: "Contraseña errada"
                     })
                 }else{
                     res.status(200).send({
@@ -111,7 +111,7 @@ function obtenerImagenUsuario(req,res){
             //devolvemos la imagen
             res.sendFile(path.resolve(path_file));
         }else{
-            res.status(200).send({message:"no existe imagen"});
+            res.status(200).send({message:"No existe imagen"});
         }
     });
 }
@@ -149,7 +149,7 @@ function cargarImagenUsuario(req,res){
             res.status(200).send({message:"Extension del archivo no correcta"});    
         }
     }else{
-        res.status(200).send({message:"no ha subido ninguna imagen"});
+        res.status(200).send({message:"No ha subido ninguna imagen"});
     }
 }
 

@@ -1,15 +1,17 @@
-<!-- Aquí inicia el slider promocional -->
-<!-- Comenté el caballero porque cuando se pone deshabilita o bloquea todo lo que hay en la página como botones etc -->
-<!-- <div class="fixed-bottom">
+<!-- caballero sticky -->
+<div class="fixed-bottom">
     <div>
         <img src="../../../assets/img/caballo.gif" alt="">
     </div>
 </div>
 <div class="fixed-bottom">
     <div>
-        <a href="#"> <img src="../../../assets/img/bandera-suscribete(1).png" alt=""></a>
+        <a [routerLink]="['/planes']"> <img src="../../../assets/img/bandera-suscribete(1).png" alt=""></a>
     </div>
-</div> -->
+</div>
+<!-- Este Div es para que el header no oculte el slider -->
+<div class="espacioHeader"></div>
+<!-- Aquí inicia el slider promocional -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner carousel_h">
         <div class="carousel-item">
@@ -17,7 +19,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h4 class="textoSlider">Conviértete en rey o reina</h4>
                 <p class="slider-text">… Y disfruta de tus películas y series favoritas de forma ilimitada</p>
-                <button type="button" class="btn btn-outline-warning">Suscríbete</button>
+                <button type="button" class="btn btn-outline-warning" [routerLink]="['/planes']">Suscríbete</button>
             </div>
         </div>
         <div class="carousel-item">
@@ -25,7 +27,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h4 class="textoSlider">¿Estás listo para la evolución del streaming?</h4>
                 <p class="slider-text">Películas, series y más...</p>
-                <button type="button" class="btn btn-outline-warning">Suscríbete</button>
+                <button type="button" class="btn btn-outline-warning" [routerLink]="['/planes']">Suscríbete</button>
             </div>
         </div>
         <div class="carousel-item active">
@@ -33,7 +35,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h4 class="textoSlider">¿Estás listo para la evolución del streaming?</h4>
                 <p class="slider-text">Películas, series y más...</p>
-                <button type="button" class="btn btn-outline-warning">Suscríbete</button>
+                <button type="button" class="btn btn-outline-warning" [routerLink]="['/planes']">Suscríbete</button>
             </div>
         </div>
     </div>
@@ -65,15 +67,16 @@
                     <div class="form-group col-sm">
                         <label for="exampleInputEmail1">Email</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" #correo="ngModel" name="correo"
-                            [(ngModel)]="usuario.correo" required>
+                            [(ngModel)]="pri_correo" required>
                     </div>
                     <div class="form-group col-sm selectCorreo">
                         <label for="sel1"></label>
-                        <select class="form-control" id="sel1">
-                            <option>@gmail.com</option>
-                            <option>@outlook.com</option>
-                            <option>@hotmail.com</option>
-                            <option>@yahoo.com</option>
+                        <select class="form-control selectCorreo" id="sel1" #correo="ngModel" name="correo"
+                            [(ngModel)]="sec_correo" required>
+                            <option value="@gmail.com">@gmail.com</option>
+                            <option value="@outlook.com">@outlook.com</option>
+                            <option value="@hotmail.com">@hotmail.com</option>
+                            <option value="@yahoo.com">@yahoo.com</option>
                         </select>
                     </div>
                 </div>
@@ -83,20 +86,22 @@
                         name="password" [(ngModel)]="usuario.password" required>
                 </div>
                 <div class="input-group selectorGenero">
-                    <div><input type="radio"> </div>
+                    <div><input type="radio" value="Dama" name="genero" #genero="ngModel" [(ngModel)]="usuario.genero"> </div>
                     <div>
                         <p>Dama</p>
                     </div>
-                    <div><input type="radio"> </div>
+                    <div><input type="radio" value="Caballero" name="genero" #genero="ngModel" [(ngModel)]="usuario.genero"> </div>
                     <div>
                         <p>Caballero</p>
                     </div>
                 </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Acepto la Política de Privacidad</label>
+                <div class="checkPrivacidad">
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Acepto la Política de Privacidad</label>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-outline-warning">ENVIAR</button>
+                <button type="submit" class="btn btn-outline-warning btn-registro">ENTRAR A LA COMUNIDAD</button>
                 <div *ngIf="registroCorrecto" class="alert alert-success">
                     {{registroCorrecto}}
                 </div>
@@ -125,8 +130,7 @@
                 <h3 class="promoH3">SOLO POR HOY</h3>
                 <h4 class="promoH4">$29.999 3/meses</h4>
                 <p class="promoParrafo">TUS SERIES Y PELÍCULAS FAVORITAS</p>
-
-                <a href="#" class="btn btn-outline-warning btn-promo">REGÍSTRATE YA</a>
+                <a class="btn btn-outline-warning btn-promo">REGÍSTRATE YA</a>
             </div>
         </div>
     </div>
@@ -202,3 +206,4 @@
             </div>
         </div>
     </div>
+</div>

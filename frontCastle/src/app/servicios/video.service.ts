@@ -44,14 +44,14 @@ export class VideoService {
   //Cargar fichero canción
   cargarFicheroVideo(file: File, id) {
     var formData = new FormData();
-    formData.append('song', file);
+    formData.append('video', file);
     return this._http.post(
       this.url + "cargar-fichero-video/" + id,
       formData
     ).pipe(map(res => res));
   }
 
- //Obtener Videos
+ //Obtener Videos con genero
 obtenerVideos(genero){
   
   let options = {
@@ -62,5 +62,16 @@ obtenerVideos(genero){
      options
   ).pipe(map(res => res));
 }
+
+/* obtenerVideos(){
+  
+  let options = {
+    headers: new HttpHeaders(
+      { 'Content-Type': 'application/json' })};
+     return this._http.get(
+     this.url + "/videos",
+     options
+  ).pipe(map(res => res));
+} */
 
 }

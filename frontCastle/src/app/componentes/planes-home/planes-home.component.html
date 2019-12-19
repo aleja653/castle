@@ -1,18 +1,29 @@
+<!-- Este Div es para que el header no oculte el slider -->
+<div class="espacioHeader"></div>
+
 <div class="fondo">
-    <h2>Castle´s Plans</h2>
+  <div class="justify-content-center row">
+    <h2>Castle's Plans</h2>
+  </div>
+  <div class="justify-content-center row">
     <div class="planes_texto">
-    <b>Sumérgete en la experiencia CASTLE los planes ofrecidos para que hagas una inmersión en el maravilloso mundo y el contenido de CASTLE</b>
-    <br>
+      <p> Inicia un viaje CASTLE, descubre como puedes aumentar tu fuente de poder.
+        Por el camino te encontrarás con diferentes personajes que te ayudarán en
+        tu misión y en la aventura que será invertir y descubir tan preciado tesoro en el interior de CASTLE.
+      </p>
+      <br>
     </div>
-    <div class="container_planes justify-content-md-center">
-            
-    <div class="card-deck row justify-content-center">
-    <div class="card row justify-content-md-center " >
-            <h2 class="card-title">Plebeyo</h2>
+  </div>
+  <div class="container_planes justify-content-md-center">
+
+    <div class="card-deck row justify-content-center tarjetaPlanes">
+      <div class="card row justify-content-md-center md-5 tarjetas">
+        <h2 class="card-title">Plebey@</h2>
         <img src="../../../assets/img/planes_free.png" class="card-img-top justify-content-md-center" alt="...">
         <div class="card-body">
-          
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+          <p class="card-text">Si eres un Plebeyo CASTLE descubriras el tesoro al interior con 30 min de fuente de
+            poder.</p>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Acceso al catálogo</li>
@@ -20,15 +31,16 @@
           <li class="list-group-item">Anuncios</li>
         </ul>
         <div class="card-body">
-                <button type="button" class="">SUSCRIBETE</button>
+          <button type="button" class="btn btn-outline-warning" *ngIf="varCambiar != 'ROLE_REY'||'ROLE_PLEBEYO'">SUSCRÍBETE</button>
         </div>
       </div>
       <div class="card">
-            <h2 class="card-title">Rey</h2>
-        <img src="../../../assets/img/planes_money.png" class="card-img-top" alt="..."> 
+        <h2 class="card-title">Rey o Reina</h2>
+        <img src="../../../assets/img/planes_money.png" class="card-img-top" alt="...">
         <div class="card-body">
-         
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+          <p class="card-text">Si eres un Rey CASTLE descubriras el tesoro al interior con infinutos minutos de fuente
+            de poder.</p>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Lista de favoritos</li>
@@ -36,32 +48,38 @@
           <li class="list-group-item">Sin anuncios</li>
         </ul>
         <div class="card-body">
-                <button type="button"  data-toggle="modal" data-target="#exampleModalCenter">SUSCRIBETE</button>
+          <button type="button" data-toggle="modal" data-target="#exampleModalCenter"
+            class="btn btn-outline-warning" *ngIf="varCambiar == 'ROLE_PLEBEYO'">SUSCRÍBETE</button>
         </div>
+      </div>
     </div>
-    </div>
-    </div>
-    <div class="planes_modal">
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle">Confirmar pago</h5>
-              <a href="https://portal.psepagos.com.co/web/catalogo-pse?utm_source=url_pse&utm_medium=pse&utm_campaign=catalogopse"><button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  </div>
+  <div class="planes_modal">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Confirmar pago</h5>
+            <a
+              href="https://portal.psepagos.com.co/web/catalogo-pse?utm_source=url_pse&utm_medium=pse&utm_campaign=catalogopse"><button
+                type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button> </a>
-            </div>
-            <div class="modal-body">
-              <a href="https://portal.psepagos.com.co/web/catalogo-pse?utm_source=url_pse&utm_medium=pse&utm_campaign=catalogopse"></a><img src="../../../assets/planes_pse.jpg" alt="">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Confirmar pago</button>
-            </div>
+          </div>
+          <div class="modal-body">
+            <a class="img_modal_planes"
+              href="https://portal.psepagos.com.co/web/catalogo-pse?utm_source=url_pse&utm_medium=pse&utm_campaign=catalogopse"></a>
+            <img class="pse"src="../../../assets/img/PSE(1).png" alt="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-outline-warning">Confirmar pago</button>
           </div>
         </div>
       </div>
     </div>
-      <br>
-    </div>
-    <br>
+  </div>
+  <br>
+</div>
+<br>

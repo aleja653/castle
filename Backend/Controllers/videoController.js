@@ -4,9 +4,9 @@
 var fs = require('fs');
 var path = require('path');
 
-const video = require('../models/videoModel')
+const Video = require('../models/videoModel')
 
-function crearvideo(req, res){
+function crearVideo(req, res){
     var video = new Video()
     var params = req.body
     
@@ -23,7 +23,7 @@ function crearvideo(req, res){
     video.save()
         .then((videoGuardada) => {
             if (!videoGuardada) {
-                res.status(404).send({ message: 'no se ha creado exitosamente el video' })
+                res.status(404).send({ message: 'No se ha creado exitosamente el video' })
             } else {
                 res.status(200).send({ video: videoGuardada })
             }
@@ -33,13 +33,13 @@ function crearvideo(req, res){
         })
 }
 
-function eliminarvideo(req,res){
-    var idvideo = req.params.id
+function eliminarVideo(req,res){
+    var idVideo = req.params.id
 
-    video.findByIdAndRemove(idvideo).exec()
+    Video.findByIdAndRemove(idVideo).exec()
     .then((videoEliminada)=>{
         if(!videoEliminada){
-            res.status(404).send({message:'no se ha eliminado exitosamente el video'})
+            res.status(404).send({message:'No se ha eliminado exitosamente el video'})
         }else{
             res.status(200).send({video:videoEliminada})
         }
@@ -54,12 +54,12 @@ function obtenervideos(req,res){
     var genero= req.params.genero;
     Video.find({genero:genero},(err,videos)=>{
         if(err){
-            res.status(500).send({message: "error en el servidor"
+            res.status(500).send({message: "Error en el servidor"
             })
         }else{
             if(!videos){
                 res.status(200).send({
-                    message: "no se pudo obtener los videos"
+                    message: "No se pudo obtener los videos"
                 })
             }else{
                 res.status(200).send({
@@ -75,25 +75,25 @@ function obtenerFicherovideo(req,res){
     //nombre fichero
     var videoFile = req.params.videoFile;
     //ruta archivo
-    var path_file = './uploads/videos/'+songFile;
+    var path_file = './uploads/video/'+videoFile;
     //se comprueba si existe
     fs.exists(path_file,function(exists){
         if(exists){
             //devolvemos el video
             res.sendFile(path.resolve(path_file));
         }else{
-            res.status(200).send({message:"no existe el video"});
+            res.status(200).send({message:"No existe el video"});
         }
     });
 }
 
-function cargarFicherovideo(req,res){
-    var idvideo = req.params.id;
+function cargarFicheroVideo(req,res){
+    var idVideo = req.params.id;
     var file_name = 'No subido...';
 
     //se valida si viene el archivo con la variable superglobal files
     if(req.files){
-        var file_path = req.files.song.path;
+        var file_path = req.files.file.path;
         var file_split = file_path.split('\\');
         //se obtiene nombre del archivo
         var file_name = file_split[2];
@@ -103,7 +103,7 @@ function cargarFicherovideo(req,res){
         var file_ext = exp_split[1];
 
         if(file_ext == 'mp3'){
-            video.findByIdAndUpdate(idvideo,{archivo:file_name},(err,videoActualizada)=>{
+            Video.findByIdAndUpdate(idVideo,{archivo:file_name},(err,videoActualizada)=>{
                 if(err){
                     res.status(500).send({message:'Error en el servidor'});
                 }else{
@@ -112,7 +112,7 @@ function cargarFicherovideo(req,res){
                     }else{
                         //devuelve la video antes de actualizarse
                         videoActualizada.archivo = file_name;
-                        res.status(200).send({archivo:videoActualizada});
+                        res.status(200).send({video:videoActualizada});
                     }
                 }
             });
@@ -120,16 +120,15 @@ function cargarFicherovideo(req,res){
             res.status(200).send({message:"Extension del archivo no correcta"});    
         }
     }else{
-        res.status(200).send({message:"no ha subido ninguna video"});
+        res.status(200).send({message:"No ha subido ninguna video"});
     }
 }
 
-
 module.exports = {
-    crearvideo,
-    eliminarvideo,
+    crearVideo,
+    eliminarVideo,
     obtenerFicherovideo,
-    cargarFicherovideo,
+    cargarFicheroVideo,
     obtenervideos
 }
 

@@ -1,4 +1,4 @@
-.bg-light {
+/* .bg-light {
     background-color: #f8f9fa00!important;
   
 }
@@ -12,8 +12,18 @@ a {
 
 a:hover{
     color: rgb(255, 255, 255);
-}
+} */
 
-.nav{
+/* .nav{
     padding-left: 300px;
 }
+
+.navbar{
+    display: flex;
+    align-items: center;
+} */
+
+/* .logoCastle{
+display: flex;
+height: 30%;
+} */

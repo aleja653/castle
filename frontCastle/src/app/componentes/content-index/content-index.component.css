@@ -1,10 +1,31 @@
+.homeCastle {
+    margin-top: 10%;
+}
+
 .formContainer {
     margin-bottom: 0px;
 }
-.selectorGenero p{
+
+.selectorGenero, .checkPrivacidad {
+    display: flex;
+    justify-content: center;
+}
+
+.selectorGenero p {
     text-align: left;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.selectCorreo select {
+    border-color: #FFCC33 !important;
+    background-color: #333333 !important;
+    margin-top: 8px;
+    color: #FFCC33;
+}
+
+.btn-registro {
+    margin-left: 20%;
 }
 
 .mainTitle {
@@ -27,12 +48,19 @@
     color: white;
 }
 
-.fixed-bottom img{
+.fixed-bottom {
+    left: 1200px;
+    max-width: 120px;
+    max-height: 350px;
+}
+
+.fixed-bottom img {
     display: block;
     max-width: 120px;
-    margin-top: 80%; 
+    margin-top: 80%;
     margin-bottom: 40px;
     margin-left: 90%;
+    float: right;
 }
 
 .avatarForm {
@@ -53,7 +81,7 @@
     padding: 5%;
 }
 
-.promoH3{
+.promoH3 {
     font-family: 'Roboto', sans-serif;
     color: white;
     font-weight: bolder;
@@ -61,62 +89,117 @@
     text-align: center;
 }
 
-.promoH4{
+.promoH4 {
     font-family: 'Roboto', sans-serif;
     color: white;
     font-weight: bolder;
     font-size: 2.5em;
     text-align: center;
 }
-.promoParrafo{
+
+.promoParrafo {
     font-family: 'Roboto', sans-serif;
     color: #FFCC33;
     font-size: 1.3em;
     text-align: center;
 }
-.faqContainer{
+
+.faqContainer {
     padding: 3%;
     padding-bottom: 5%;
 }
 
-.faq{
+.faq {
     max-width: 60%;
     min-width: 60%;
     justify-content: center;
 }
 
-.faqAcordeon{
+.faqAcordeon {
     font-family: 'Roboto', sans-serif;
     background-color: #333333 !important;
     border: 1px solid #FFCC33 !important;
 }
 
 .faqAcordeon p {
-color: white;
-font-weight: bold;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
-.accordion .flechaAcordeon{
+.accordion .flechaAcordeon {
     float: right;
     margin-top: 8px;
     color: #FFCC33;
 }
-.accordion .preguntaAcordeon{
+
+.accordion .preguntaAcordeon {
     text-decoration: none;
-    align-content: center;    
+    align-content: center;
     color: #FFCC33;
 }
-.btn-promo{
-    margin-left: 35%;
 
+.preguntaAcordeon {
+    margin: 0px;
+    padding: 0px;
+    max-width: 80%;
 }
 
-.textoSlider, .slider-text{
+.btn-promo {
+    margin-left: 35%;
+}
+
+.textoSlider, .slider-text {
     text-shadow: 1px 1px #333333;
 }
 
-.selectCorreo{
-    border: #FFCC33;
-    background-color: #333333;
-    margin-top:6px;
+@media screen and (min-width:1000px) {}
+
+@media screen and (max-width:1000px) {
+    .avatarForm {
+        display: none;
+    }
+    .btn-promo {
+        margin-left: 27%;
+    }
+    .promoH3 {
+        margin-top: 20px;
+        font-size: 2.5em;
+    }
+    .promoH4 {
+        font-size: 2em;
+    }
+    .promoParrafo {
+        font-size: 1em;
+    }
+    .espacioHeader {
+        height: 80px;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .avatarForm {
+        display: none;
+    }
+    .btn-promo {
+        margin-left: 27%;
+    }
+    .promoH3 {
+        margin-top: 20px;
+        font-size: 2.5em;
+    }
+    .promoH4 {
+        font-size: 2em;
+    }
+    .promoParrafo {
+        font-size: 1em;
+    }
+    .faqAcordeon p {
+        font-size: 0.9em;
+    }
+    .btn-registro {
+        margin-left: 20%;
+    }
 }
