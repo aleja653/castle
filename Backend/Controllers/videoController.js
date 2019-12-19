@@ -4,7 +4,7 @@
 var fs = require('fs');
 var path = require('path');
 
-const Video = require('../models/videoModel')
+const Video = require('../Models/videoModel');
 
 function crearVideo(req, res){
     var video = new Video()
@@ -19,7 +19,6 @@ function crearVideo(req, res){
     video.temporada = params.temporada
     video.capitulo = params.capitulo
    
-
     video.save()
         .then((videoGuardada) => {
             if (!videoGuardada) {
@@ -30,7 +29,28 @@ function crearVideo(req, res){
         })
         .catch(err => {
             res.status(500).send({ message: 'Error al guardar video' })
+        }) 
+
+/* Archivo Adrián
+        video.save((err,videoCreada)=>{
+            if(err){
+                res.status(500).send({
+                    message:"error en el servidor"
+                })
+            }else{
+                if(!videoCreada){
+                    res.status(200).send({
+                        message:"no se pudo crear la cancion"
+                    })
+                }else{
+                    res.status(200).send({
+                        video:videoCreada
+                    })
+                }
+            }
         })
+ */
+
 }
 
 function eliminarVideo(req,res){
@@ -93,7 +113,7 @@ function cargarFicheroVideo(req,res){
 
     //se valida si viene el archivo con la variable superglobal files
     if(req.files){
-        var file_path = req.files.file.path;
+        var file_path = req.files.archivo.path;
         var file_split = file_path.split('\\');
         //se obtiene nombre del archivo
         var file_name = file_split[2];
@@ -123,6 +143,44 @@ function cargarFicheroVideo(req,res){
         res.status(200).send({message:"No ha subido ninguna video"});
     }
 }
+
+
+ /* 
+function cargarFicheroVideo(req,res){
+    var idVideo = req.params.id;
+    var file_name = 'No subido...';
+
+    //se valida si viene el archivo con la variable superglobal files
+    if(req.files){
+        var file_path = req.files.archivo.path;
+        var file_split = file_path.split('\\');
+        //se obtiene nombre del archivo
+        var file_name = file_split[2];
+
+        //se obtiene extension fichero
+        var exp_split = file_name.split('\.');
+        var file_ext = exp_split[1];
+
+        if(file_ext == 'mp3'){
+            Video.findByIdAndUpdate(idVideo,{archivo:file_name},(err,videoActualizada)=>{
+                if(err){
+                    res.status(500).send({message:'Error en el servidor'});
+                }else{
+                    if(!videoActualizada){
+                        res.status(404).send({message:'No se ha podido actualizar la cancion'});
+                    }else{
+                        //devuelve usuario antes de actualizarse
+                        res.status(200).send({video:videoActualizada});
+                    }
+                }
+            });
+        }else{
+            res.status(200).send({message:"Extension del archivo no correcta"});    
+        }
+    }else{
+        res.status(200).send({message:"no ha subido ninguna cancion"});
+    }
+} */
 
 module.exports = {
     crearVideo,

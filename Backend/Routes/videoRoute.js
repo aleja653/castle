@@ -1,7 +1,7 @@
 'use strict'
 const app = require('express')
 
-var videoController = require('../controllers/videoController');
+var videoController = require('../Controllers/videoController');
 var multipart = require('connect-multiparty');
 var md_upload = multipart({
     uploadDir: './uploads/video'});

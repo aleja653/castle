@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
             this._router.navigate(['/catalogo'])
             
         } else {
-          this.loginCorrecto =  "LOS DATOS INGRESADOS SON INCORRECTOS";     
+          this.loginCorrecto =  "Los datos ingresados son incorrectos";     
         }
       }, error => {
         if (error != null) {

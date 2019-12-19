@@ -2,7 +2,7 @@
 
 const app = require('express')
 
-var usuarioController = require('../controllers/usuarioController')
+var usuarioController = require('../Controllers/usuarioController')
 var multipart = require('connect-multiparty');
 var md_upload = multipart(
     {uploadDir : './uploads/usuario'}

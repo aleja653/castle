@@ -1,3 +1,7 @@
+.espacioHeader {
+    height: 120px;
+}
+
 .video{
     width: 85%;
     margin-top: 10%;
@@ -17,6 +21,8 @@ h1{
     margin-bottom: -10%;
     padding-top: 4%;
     padding-bottom: 1%;
+    color: #FFCC33;
+    font-family: MedievalSharp;
 
 }
 .btn{
@@ -25,14 +31,22 @@ h1{
  
 
 }
-h3{
-    margin-top:40% ;
+.sinopsis{
+    margin-top:15% ;
     margin-right: 5%;
+    color: #FFCC33;
+    font-family: MedievalSharp;
+}
+.mainTitle{
+    color: #FFCC33;
+    font-family: MedievalSharp;
+    padding: unset;
 }
 
 .parrafo{
     text-align: justify;  
     margin-right: 15%;  
+    color: white;
 }
 .selectCorreo select{
     border-color: #FFCC33 !important;
@@ -65,8 +79,8 @@ h3{
     min-width: 60%;
     color:  #FFCC33;
     text-decoration: none;
-   /*  max-width: 60%;
-    min-width: 60%; */
+   max-width: 60%;
+    min-width: 100%; 
 }
 .faqAcordeon a{
     text-decoration: none;
@@ -74,14 +88,13 @@ h3{
 }
 .faqAcordeon p {
 color: white;
-
 text-align:center;
 }
 
 .accordion .flechaAcordeon{
     float: right;
-    margin-top: 8px;
     color: #FFCC33;
+    margin-top: -10%;
 }
 .accordion .preguntaAcordeon{
     text-decoration: none;
@@ -108,3 +121,41 @@ text-align:center;
     margin-top: -5%;
 
 }
+
+@media screen and (min-width:1000px) {
+   
+}
+
+@media screen and (max-width:1000px) {
+    .row{
+        display: inherit;
+    }
+    .col-5{
+        max-width: 100% !important;
+        margin-left: 5%;
+    }
+    .col-7{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .contenedorVideo{
+        overflow-x: hidden;
+    }
+    .espacioHeader {
+        height: 80px;
+    }
+}
+
+@media screen and (max-width:750px) {
+   .row{
+       display: inherit;
+   }
+   .col-5{
+       max-width: 100% !important;
+       margin-left: 5%;
+   }
+   .contenedorVideo{
+       overflow-x: hidden;
+   }
+}
+

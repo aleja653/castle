@@ -135,7 +135,7 @@ h5{
 
 @media screen and (max-width:750px) {
     .container_planes {
-        width: 100%;
+        overflow-x:hidden;
         display: flex;
         position: relative;
         left: 20%;
