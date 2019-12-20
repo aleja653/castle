@@ -12,30 +12,45 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class VideosComponent implements OnInit {
   url = "http://localhost:3977/api//obtener-fichero-video"
+  
   video: Video;
   indiceVideo = 0;
   videoActual;
   AvisoVideo;
+  existenVideo;  
+  alertaVideo;
 
   PlaylistInLocalStorage; constructor(
     private _VideoService: VideoService,
     private _route: ActivatedRoute,
   ) {
-    this.video = new Video("", "Game of Thrones", "", "", "", "", "", "el trono de fuego", "../../../assets/Game of Thrones _ Season 8 _ Official Trailer (HBO).mp4");
+    // this.video = new Video("", "", "", "", "", "", "", "","");
+    this.video = JSON.parse(localStorage.getItem('video'));
   }
 
-  ngOnInit() {
-    this._route.params.forEach((params: Params) => {
-      let id = params['id'];
-      console.log(id);
-      this._VideoService.obtenerVideo(id).subscribe(
-        (response:any)=>{
+  ngOnInit() {}
+  
+    
+  cargarVideo(){
+
+    this._VideoService.obtenerVideo("/"+this.video._id).subscribe(
+      (response:any)=>{
+        if(response.video){
           console.log(response)
-        },error =>{
-          console.log(error)
+          this.video = response.video;
+          this.existenVideo = true;
+        }else{
+          this.alertaVideo = `No se pudieron cargar 
+          los videos, contacte al 
+          administrador de la aplicacion`;
         }
-      )
-    })
+        // localStorage.setItem("playlist",JSON.stringify(playlist));
+      },error=>{
+        if (error != null) {
+          console.log(error)  
+        }
+      }
+    )
   }
 
 

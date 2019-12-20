@@ -22,10 +22,10 @@
                     <div class="carousel-item active" >
                       <div class="row" >
                         
-                        <div style="background-image:url('../../../assets/img/Locuras-edad-media.png');"
-                          class="col-12 col-md d-flex align-items-center justify-content-center" *ngFor="let video of videos"  [routerLink]="['/video',video._id]">
-                          <h3>{{video.titulo + ' - ' + video.genero }}</h3>
-                          <img src="{{url + video.imagen}}" alt="">
+                        <div 
+                          class="col-12 col-md d-flex align-items-center justify-content-center" *ngFor="let video of videos"  [routerLink]="['/video',video._id]" (click)="agregarListaReproduccion()">
+                          <!-- <h3>{{video.titulo }}</h3> -->
+                          <img class="imagenVideo" src="{{url + video.imagen}}" alt="">
                           <!-- {{url + video.imagen}} -->
                          
                         </div>

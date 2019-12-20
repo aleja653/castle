@@ -1,25 +1,37 @@
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<!-- Este Div es para que el header no oculte el slider -->
+<div class="espacioHeader"></div>
 <div class="container">
     <div class="buttons_menu">
-        <button class="btn btn-primary btn-outline-warning" (click)="modificar('1')">Crear contenido</button>
+        <button class="btn btn-primary btn-outline-warning" (click)="modificar('1')" *ngIf="usuario.role == 'ROLE_ADMIN'">Crear contenido</button>
         <button class="btn btn-primary btn-outline-warning" (click)="modificar('2')">Mi perfil</button>
-        <button class="btn btn-primary btn-outline-warning" (click)="modificar('3')">Lista de contenido</button>
+        <button class="btn btn-primary btn-outline-warning" [routerLink]="['/catalogo']">Catálogo</button>
     </div>
     <div class="row">
         <div class="col-6">
-            <app-contenido-tools *ngIf="cambiar == '1'"></app-contenido-tools>
-            <app-user-profile *ngIf="cambiar == '2'"></app-user-profile>
-            <app-lista-contenido *ngIf="cambiar == '3'"></app-lista-contenido>
+            <div class="mostrarMobile">
+                <div class="fotoPerfil">
+                    <img src="../../../assets/img/pefil-dama.png" alt="">
+                    <!--    <img src="../../../assets/img/perfil-caballero.png" alt=""> -->
+                </div>
+                <div class="botonSuscribir">
+                    <button type="button" class="btn btn-outline-warning" [routerLink]="['/planes']">Suscríbete</button>
+                </div>
+            </div>
+            <div class="formsMobile">
+                <app-contenido-tools *ngIf="cambiar == '1'"></app-contenido-tools>
+                <app-user-profile *ngIf="cambiar == '2'"></app-user-profile>
+            </div>
         </div>
-        <!-- <div class="col-6 player">
-            <app-player></app-player>
-        </div> -->
+        <div class="col-6">
+            <div class="ocultarMobile">
+                <div class="fotoPerfil">
+                    <img src="../../../assets/img/pefil-dama.png" alt="">
+                    <!--    <img src="../../../assets/img/perfil-caballero.png" alt=""> -->
+                </div>
+                <div class="botonSuscribir">
+                    <button type="button" class="btn btn-outline-warning" [routerLink]="['/planes']">Suscríbete</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

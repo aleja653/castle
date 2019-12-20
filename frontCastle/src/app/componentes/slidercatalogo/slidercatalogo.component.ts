@@ -14,12 +14,13 @@ import { Router } from '@angular/router';
 })
 export class SlidercatalogoComponent implements OnInit {
   @Input() genero: string;// campo para filtrar genero
-
+  video:Video;
   videos:Video[];
   existenVideos;  
   alertaVideos;
   avisoVideos;
   usuario:Usuario;
+  
   url = "http://localhost:3977/api/obtener-imagen-video/"
 
   constructor(
@@ -56,18 +57,29 @@ export class SlidercatalogoComponent implements OnInit {
     )
   }
 
-  agregarListaReproduccion(video){
-    this.avisoVideos= "video agregada al reproductor";
-    var playlist = [];
-    if(localStorage.getItem("playlist") != null){
-      playlist = JSON.parse(localStorage.getItem("playlist"))
-      playlist.push(video)
-    }else{
-      playlist.push(video)
-    }
-    localStorage.setItem("playlist",JSON.stringify(playlist));
-    this._servicioCompartido.emitirVideo(video);
+  agregarListaReproduccion(){
+    this._videoService.obtenerVideo(this.video._id).subscribe(
+      (response: any) => {
+        if (response.video) {
+          let videocargado = new Video(
+            response.video._id,
+            response.video.titulo,
+            response.video.tipo,
+            response.video.genero,
+            response.video.sinopsis,
+            response.video.clasificación,
+            response.video.temporada,
+            response.video.imagen,
+            response.video.archivo
+          )
+            localStorage.setItem
+            ("video",JSON.stringify(videocargado));
+          }}
+          )
   }
+
+
+
 
   eliminarVideo(video){
     this._videoService.eliminarVideo(video._id).subscribe(
@@ -86,6 +98,7 @@ export class SlidercatalogoComponent implements OnInit {
       }
     )
   }
+
 
 
 }

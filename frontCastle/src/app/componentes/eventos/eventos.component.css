@@ -1,13 +1,17 @@
 .espacioHeader {
     height: 100px;
 }
+
 .homeCastle {
     margin-top: 10%;
-}.fixed-bottom {
+}
+
+.fixed-bottom {
     left: 1200px;
     max-width: 120px;
     max-height: 350px;
 }
+
 .fixed-bottom img {
     display: block;
     max-width: 120px;
@@ -15,54 +19,68 @@
     margin-bottom: 40px;
     margin-left: 90%;
     float: right;
-}.mainTitle {
+}
+
+.mainTitle {
     font-family: MedievalSharp;
     font-size: 250%;
     text-align: left;
-    color: #FFCC33
-;
+    color: #FFCC33;
     padding: 10px;
-}.eventBody{
+}
+
+.eventBody {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.ciudadEvento {
     color: white;
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: left;
-}.ciudadEvento{
-    color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: left;
-}.container{
+}
+
+.container {
     margin-top: 2%;
     margin-bottom: 4%;
     justify-content: center;
     align-items: center;
-}.btn {
-padding-right: 5%;
-padding-left: 5%;
-/* font-weight: bolder; */
-min-width: 200px;
-}.boletas{
-    display:flex;
+}
+
+.btn {
+    padding-right: 5%;
+    padding-left: 5%;
+    /* font-weight: bolder; */
+    min-width: 200px;
+}
+
+.boletas {
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}.textoSliderEvento{
-    font-size: 300%;
-}.slider-textEvento{
-    font-size: 150%;  
-}.textoSlider, .slider-text {
-    text-shadow: 1px 1px #333333
-;
 }
+
+.textoSliderEvento {
+    font-size: 300%;
+    text-shadow: 1px 1px #333333;
+}
+
+.slider-textEvento {
+    font-size: 150%;
+    text-shadow: 1px 1px #333333;
+}
+
+
 @media screen and (min-width:1000px) {}
+
 @media screen and (max-width:1000px) {
-    .avatarForm {
-        display: none;
-    }
-    .btn-promo {
+    /* .btn-promo {
         margin-left: 27%;
-    }
+    } */
     .promoH3 {
         margin-top: 20px;
         font-size: 2.5em;
@@ -74,30 +92,66 @@ min-width: 200px;
         font-size: 1em;
     }
     .espacioHeader {
-        height: 80px;
+        height: 60px;
     }
-}
-@media screen and (max-width:750px) {
-    .avatarForm {
+    .textoSliderEvento {
+        font-size: 200%;
+    }
+    .slider-textEvento {
+        font-size: 100%;
+    }
+    .btn {
+        padding-right: 2%;
+        padding-left: 2%;
+        min-width: 120px;
+    }
+    .row {
+        height: 600px;
+    }
+    .col-2{
         display: none;
     }
-    .btn-promo {
-        margin-left: 27%;
+    .col-4{
+        min-width: 300px;
+        margin-left: 5%;
     }
-    .promoH3 {
-        margin-top: 20px;
-        font-size: 2.5em;
+
+}
+
+@media screen and (max-width:750px) {
+    
+    .espacioHeader {
+        height: 90px;
     }
-    .promoH4 {
-        font-size: 2em;
+    .mainTitle {
+        font-size: 150%;
     }
-    .promoParrafo {
-        font-size: 1em;
+    .eventBody {
+        font-size: 15px;
     }
-    .faqAcordeon p {
-        font-size: 0.9em;
+    .ciudadEvento {
+        font-size: 18px;
     }
-    .btn-registro {
-        margin-left: 20%;
+    .btn {
+        /*  padding-right: 1%;
+    padding-left: 1%; */
+        min-width: 200px;
+    }
+    .row {
+        height: 500px;
+    }
+    .boletas {
+        display: inherit;
+        max-width: 100%;
+    }
+    .col-2{
+        display: none;
+    }
+    .col-4{
+        flex: 100%;
+    }
+    .col-6{
+        width: 100%;
+        min-width: 360px;
     }
 }

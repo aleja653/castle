@@ -1,0 +1,80 @@
+.espacioHeader {
+    height: 150px;
+}
+
+.btn {
+    margin: 1%
+}
+
+.botonSuscribir {
+    display: flex;
+    justify-content: center;
+}
+
+.botonSuscribir button {
+    min-width: 300px;
+    margin-left: 15%;
+}
+
+.fotoPerfil {
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+    margin-top: 10%;
+}
+
+.fotoPerfil img {
+    max-width: 350px;
+}
+.mostrarMobile {
+    display: none;
+}
+.ocultarMobile{
+    display: block;
+}
+
+@media screen and (min-width:1000px) {}
+
+@media screen and (max-width:1000px) {
+    .espacioHeader {
+        height: 80px;
+    }
+    .btn {
+        max-width: 130px;
+        font-size: 0.8em;
+        margin: 1%
+    }
+}
+
+@media screen and (max-width:750px) {
+    .espacioHeader {
+        height: 100px;
+    }
+    .col-6 {
+        min-width: 100%;
+    }
+    .columnaForms {
+        height: 600px;
+    }
+    .mostrarMobile {
+        display: block;
+    }
+    .ocultarMobile{
+        display: none;
+    }
+    .fotoPerfil {
+        display: flex;
+        justify-content: center;
+        margin-left: 0%;
+        margin-top: 10%;
+    }
+    
+    .fotoPerfil img {
+        max-width: 200px;
+    }
+    .botonSuscribir button {
+        min-width: 180px;
+        margin-left: 0%;
+    }
+    
+}

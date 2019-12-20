@@ -30,7 +30,7 @@ export class PlanesHomeComponent implements OnInit {
           this.usuario = response.usuario;
           localStorage.setItem("sesion", JSON.stringify(this.usuario));
         } else {
-          this.actualizacionCorrecta = "El Rol no se actualizaron por completo contacta al administrador de la aplicacion";
+          this.actualizacionCorrecta = "El Rol no se actualizó por completo contacta al administrador de la aplicacion";
         }
       }, error => {
         if (error != null) {

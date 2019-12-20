@@ -7,33 +7,28 @@ form {
     padding-left: 10%;
     padding-right: 10%;
     border-radius: 3%;
-}
-
-.row {
+}.row {
     height: 600px;
-}
-
-@media screen and (min-width:1000px) {}
-
-@media screen and (max-width:1000px) {
+}@media screen and (min-width:1000px) {}@media screen and (max-width:1000px) {
     .espacioHeader {
-        height: 80px;
+        height: 60px;
     }
     form {
         width: 100%;
-        padding: 5%;
-
-    }
+        padding: 5%;    }
 .columnaLogin{
     display: none;
 }
+.row {
+    height: 950px;
 }
-
-@media screen and (max-width:750px) {
+}@media screen and (max-width:750px) {
     form {
         width: 100%;
         text-align: center;
-
     }
-
+    .row {
+        height: 600px;
+        
+    }
 }

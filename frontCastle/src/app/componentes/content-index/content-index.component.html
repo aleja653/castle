@@ -86,11 +86,13 @@
                         name="password" [(ngModel)]="usuario.password" required>
                 </div>
                 <div class="input-group selectorGenero">
-                    <div><input type="radio" value="Dama" name="genero" #genero="ngModel" [(ngModel)]="usuario.genero"> </div>
+                    <div><input type="radio" value="Dama" name="genero" #genero="ngModel" [(ngModel)]="usuario.genero">
+                    </div>
                     <div>
                         <p>Dama</p>
                     </div>
-                    <div><input type="radio" value="Caballero" name="genero" #genero="ngModel" [(ngModel)]="usuario.genero"> </div>
+                    <div><input type="radio" value="Caballero" name="genero" #genero="ngModel"
+                            [(ngModel)]="usuario.genero"> </div>
                     <div>
                         <p>Caballero</p>
                     </div>
@@ -130,7 +132,7 @@
                 <h3 class="promoH3">SOLO POR HOY</h3>
                 <h4 class="promoH4">$29.999 3/meses</h4>
                 <p class="promoParrafo">TUS SERIES Y PELÍCULAS FAVORITAS</p>
-                <a class="btn btn-outline-warning btn-promo">REGÍSTRATE YA</a>
+                <a class="btn btn-outline-warning btn-promo" onclick="scrollWin()" href="#">REGÍSTRATE YA</a>
             </div>
         </div>
     </div>

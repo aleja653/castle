@@ -1,18 +1,4 @@
-<!-- <nav class="navbar navbar-dark bg-dark">
-
-  <a [routerLink]="['']" class="navbar-brand"><img src="../assets/logo.png" alt="" width="30%"> </a>
-  <app-header></app-header>
-  <a [routerLink]="['/login']" class="ml-auto" *ngIf="!usuarioLogueado">
-    <button type="button" class="btn btn-outline-warning">Iniciar Sesión</button>
-  </a>
-  
-  <a [routerLink]="" (click)="cerrarSesion()" class="ml-auto" *ngIf="usuarioLogueado">
-    <i class="far fa-user"></i>
-    Cerrar Sesión
-  </a>
-</nav> -->
-<!-- header -->
-<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3 menuHeader">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3 menuHeader">
   <div class="container-fluid">
     <div class="logoCastle">
       <a [routerLink]="['']" class="navbar-brand mr-3"> <img src="../../../assets/logo.png" alt="" width="40%"></a>
@@ -24,89 +10,50 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav">
         <a href="#" class="nav-item nav-link">Home</a>
-        <a href="#" class="nav-item nav-link">Regístrate</a>
-        <a [routerLink]="['/quienes']" class="nav-item nav-link">Nosotros</a>
-        <a [routerLink]="['/planes']" class="nav-item nav-link">Planes</a>
+        <a href="#" class="nav-item nav-link" *ngIf="!usuarioLogueado">Regístrate</a>
+        <a [routerLink]="['/catalogo']" class="nav-item nav-link" *ngIf="usuarioLogueado">Catálogo</a>
         <a [routerLink]="['/eventos']" class="nav-item nav-link">Eventos</a>
+        <a [routerLink]="['/nosotros']" class="nav-item nav-link">Nosotros</a>
+        <a [routerLink]="['/planes']" class="nav-item nav-link">Planes</a>
+        <a [routerLink]="['/menu']" class="nav-item nav-link" *ngIf="usuarioLogueado">Perfil</a>
       </div>
       <div class="navbar-nav ml-auto botonSesion">
-        <a [routerLink]="['/login']" class="ml-auto" *ngIf="!usuarioLogueado">
-          <button type="button" class="btn btn-outline-warning">Iniciar Sesión</button>
-        </a>
-        <a [routerLink]="" (click)="cerrarSesion()" class="ml-auto" *ngIf="usuarioLogueado">
-          <i class="far fa-user"></i>
-          Cerrar Sesión
-        </a>
+        <a [routerLink]="['/login']" class="ml-auto" *ngIf="!usuarioLogueado"><button type="button" class="btn btn-outline-warning">Iniciar Sesión</button></a>
+        <a [routerLink]="" (click)="cerrarSesion()" class="ml-auto" *ngIf="usuarioLogueado"><i class="far fa-user"></i>Cerrar Sesión</a>
       </div>
     </div>
   </div>
-</nav> -->
-
-<nav class="navbar navbar-dark bg-dark"> <a [routerLink]="['']" class="navbar-brand"><img src="../assets/logo.png"
-      alt="" width="50%"> </a> <!-- <app-header></app-header> -->
-
-      <a href="#" class="ml-auto">
-    Home
-  </a>
-  <a href="#" class="ml-auto" *ngIf="!usuarioLogueado">
-    Registrarse
-  </a>
-  <a [routerLink]="['/catalogo']" class="ml-auto" *ngIf="usuarioLogueado">
-    Catalogo
-  </a> 
-  <a [routerLink]="['/eventos']" class="ml-auto" *ngIf="usuarioLogueado">
-    Eventos
-  </a>
-  <a [routerLink]="['/quienes']" class="ml-auto">
-    Nosotros
-  </a>
-  <a [routerLink]="['/planes']" class="ml-auto">
-    Planes
-  </a>
-  <a [routerLink]="['/login']" class="ml-auto" *ngIf="!usuarioLogueado">
-    <button type="button" class="btn btn-outline-warning">Iniciar Sesion</button>
-  </a>
-  <a [routerLink]="" (click)="cerrarSesion()" class="ml-auto" *ngIf="usuarioLogueado">
-    <i class="far fa-user"></i>
-    Cerrar sesión
-  </a>
 </nav>
-
-
-
-
-
 
 <div class="bodyCastle">
   <router-outlet></router-outlet>
 </div>
 
-<div id="footer">
+<div id="footer" class="footerResp">
   <div class="container pt-2 d-flex">
     <h2 class="mr-3">
 
     </h2>
     <div class="pt-2 ml-5">
       <a href="https://www.facebook.com/castlepeliculas/" class="mr-4" target="_blank">
-        <i class="fab fa-facebook-square"></i>
+        <img src="../assets/facebook.png" alt="" height="40px">
         Facebook
-      </a>
-
-      <a href="https://twitter.com/castlepeliculas" class="mr-4" target="_blank">
-        <i class="fab fa-twitter-square"></i>
+      </a> <a href="https://twitter.com/castlepeliculas" class="mr-4" target="_blank">
+        <img src="../assets/twitter.png" alt="" height="40px">
         Twitter
-      </a>
-
-      <a href="https://www.instagram.com/castlepeliculas/" class="mr-4" target="_blank">
-        <i class="fab fa-instagram"></i>
+      </a> <a href="https://www.instagram.com/castlepeliculas/" class="mr-4" target="_blank">
+        <img src="../assets/instagram.png" alt="" height="40px">
         Instagram
-      </a>
-
-    </div>
-    <div class="pt-2 ml-auto">
-      <a class="credits" href="">Créditos</a>
-    </div>
-
+      </a></div>
+      <div class="pt-2 ml-auto">
+        <a class="credits" href="" data-toggle="modal" data-target=".bd-example-modal-lg">Créditos: VIP Zone</a>
+      </div>
   </div>
-
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <img src="../assets/img/home_creditos.jpg" alt="">
+      </div>
+    </div>
+  </div>
 </div>

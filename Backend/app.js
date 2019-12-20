@@ -4,8 +4,8 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 var app = express();
-var usuariosRoutes = require('./routes/usuarioRoute');
-var videosRoutes = require('./routes/videoRoute');
+var usuariosRoutes = require('./Routes/usuarioRoute');
+var videosRoutes = require('./Routes/videoRoute');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());

@@ -15,7 +15,7 @@ function crearUsuario(req, res){
     usuario.correo = params.correo
     usuario.password = params.password
     usuario.imagen = params.imagen
-    usuario.role = 'ROLE_REY'
+    usuario.role = 'ROLE_PLEBEYO'
     usuario.plan = params.plan
     usuario.metodoPago = params.metodoPago
     usuario.numtarjeta = params.numtarjeta

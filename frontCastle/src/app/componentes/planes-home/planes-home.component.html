@@ -31,7 +31,7 @@
           <li class="list-group-item">Anuncios</li>
         </ul>
         <div class="card-body">
-          <button type="button" class="btn btn-outline-warning" *ngIf="varCambiar != 'ROLE_REY'||'ROLE_PLEBEYO'">SUSCRÍBETE</button>
+          <button type="button" class="btn btn-outline-warning" *ngIf="varCambiar != 'ROLE_REY'||'ROLE_PLEBEYO'" data-toggle="modal" data-target="#ModalCenterReg">SUSCRÍBETE</button>
         </div>
       </div>
       <div class="card">
@@ -39,7 +39,7 @@
         <img src="../../../assets/img/planes_money.png" class="card-img-top" alt="...">
         <div class="card-body">
 
-          <p class="card-text">Si eres un Rey CASTLE descubriras el tesoro al interior con infinitos minutos de fuente
+          <p class="card-text">Si eres un Rey CASTLE descubrirás el tesoro al interior con infinitos minutos de fuente
             de poder.</p>
         </div>
         <ul class="list-group list-group-flush">
@@ -55,28 +55,67 @@
     </div>
   </div>
   <div class="planes_modal">
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+    <div class="modal fade" id="ModalCenterReg" tabindex="-1" role="dialog"
       aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Confirmar pago</h5>
-            <a
-              href="https://portal.psepagos.com.co/web/catalogo-pse?utm_source=url_pse&utm_medium=pse&utm_campaign=catalogopse"><button
-                type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button> </a>
+            <h5 class="modal-title" id="exampleModalCenterTitle">Registro de usuario</h5>
+            
           </div>
           <div class="modal-body">
-            <a class="img_modal_planes"
-              href="https://portal.psepagos.com.co/web/catalogo-pse?utm_source=url_pse&utm_medium=pse&utm_campaign=catalogopse"></a>
-            <img class="pse"src="../../../assets/img/PSE(1).png" alt="">
+            
+            <form #loginForm="ngForm" (ngSubmit)="registrar()" ngNativeValidate>
+              <h2 class="mainTitle">¡Regístrate!</h2>
+              <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" class="form-control" id="Nombre" #nombre="ngModel" name="nombre"
+                      [(ngModel)]="usuario.nombre" required>
+              </div>
+              <div class="row">
+                  <div class="form-group col-sm">
+                      <label for="exampleInputEmail1">Email</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" #correo="ngModel" name="correo"
+                          [(ngModel)]="pri_correo" required>
+                  </div>
+                  <div class="form-group col-sm selectCorreo">
+                      <label for="sel1"></label>
+                      <select class="form-control selectCorreo" id="sel1" #correo="ngModel" name="correo"
+                          [(ngModel)]="sec_correo" required>
+                          <option value="@gmail.com">@gmail.com</option>
+                          <option value="@outlook.com">@outlook.com</option>
+                          <option value="@hotmail.com">@hotmail.com</option>
+                          <option value="@yahoo.com">@yahoo.com</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="exampleInputPassword1">Contraseña</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" #password="ngModel"
+                      name="password" [(ngModel)]="usuario.password" required>
+              </div>
+              <div class="input-group selectorGenero">
+                  <div><input type="radio" value="Dama" name="genero" #genero="ngModel" [(ngModel)]="usuario.genero"> </div>
+                  <div>
+                      <p>Dama</p>
+                  </div>
+                  <div><input type="radio" value="Caballero" name="genero" #genero="ngModel" [(ngModel)]="usuario.genero"> </div>
+                  <div>
+                      <p>Caballero</p>
+                  </div>
+              </div>
+              <div class="checkPrivacidad">
+                  <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Acepto la Política de Privacidad</label>
+                  </div>
+              </div>
+              <button type="submit" class="btn btn-outline-warning btn-registro">ENTRAR A LA COMUNIDAD</button>
+              <div *ngIf="registroCorrecto" class="alert alert-success">
+                  {{registroCorrecto}}
+              </div>
+          </form>          </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-outline-warning">Confirmar pago</button>
-          </div>
-        </div>
       </div>
     </div>
   </div>
