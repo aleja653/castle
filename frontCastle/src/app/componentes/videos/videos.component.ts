@@ -19,7 +19,7 @@ export class VideosComponent implements OnInit {
   PlaylistInLocalStorage; constructor(
     private _serviciocompartido: CompartidoService
   ) {
-   this.video = new Video ( "", "Game of Thrones", "","","","","","el trono de fuego","","../../../assets/Game of Thrones _ Season 8 _ Official Trailer (HBO).mp4");
+   this.video = new Video ( "", "Game of Thrones", "","","","","","el trono de fuego","../../../assets/Game of Thrones _ Season 8 _ Official Trailer (HBO).mp4");
    } ngOnInit() {
     
   } 

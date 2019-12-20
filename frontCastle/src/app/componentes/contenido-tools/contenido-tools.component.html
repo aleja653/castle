@@ -69,6 +69,17 @@
             <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
         </div> -->
     </div> 
+<br>
+    <div class="input-group selectorGenero" *ngIf="video.tipo == 'serie'">
+        <div><input type="radio" value="Crear" name="opcion" #opcion="ngModel" [(ngModel)]="opciont"> </div>
+        <div>
+            <p>Crear</p>
+        </div>
+        <div><input type="radio" value="Cargar" name="opcion" #opcion="ngModel" [(ngModel)]="opciont"> </div>
+        <div>
+            <p>Cargar</p>
+        </div>
+    </div>
 
     <br>
     <button type="submit" class="btn btn-primary btn-outline-warning">Subir</button>
