@@ -71,7 +71,17 @@ obtenerVideos(genero){
     headers: new HttpHeaders(
       { 'Content-Type': 'application/json' })};
      return this._http.get(
-     this.url + "/videos" + genero,
+     this.url + "videos" + genero,
+     options
+  ).pipe(map(res => res));
+}
+
+obtenerVideo(id){
+  let options = {
+    headers: new HttpHeaders(
+      { 'Content-Type': 'application/json' })};
+     return this._http.get(
+     this.url + "video/" + id,
      options
   ).pipe(map(res => res));
 }

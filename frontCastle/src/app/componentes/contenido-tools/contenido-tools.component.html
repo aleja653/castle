@@ -34,14 +34,14 @@
     </div>
 
     <div class="form-group">
-        <label for="nombre">Temporada:</label>
-        <input type="text" class="form-control" id="Temporada" name="temporada" #temporada="ngModel"
+        <label for="nombre" *ngIf="video.tipo == 'serie'">Temporada:</label>
+        <input type="text" class="form-control" *ngIf="video.tipo == 'serie'" id="Temporada" name="temporada" #temporada="ngModel"
             [(ngModel)]="numeroTemporada" [disabled]="cargarFichero">
     </div>
 
     <div class="form-group">
-        <label for="nombre">Capítulo:</label>
-        <input type="text" class="form-control" id="Capitulo" name="capitulo" #capitulo="ngModel"
+        <label for="nombre"*ngIf="video.tipo == 'serie'">Capítulo:</label>
+        <input type="text" class="form-control" *ngIf="video.tipo == 'serie'" id="Capitulo" name="capitulo" #capitulo="ngModel"
             [(ngModel)]="numerocapitulo" [disabled]="cargarFichero">
     </div>
 
@@ -69,6 +69,17 @@
             <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
         </div> -->
     </div> 
+<br>
+    <div class="input-group selectorGenero" *ngIf="video.tipo == 'serie'">
+        <div><input type="radio" value="Crear" name="opcion" #opcion="ngModel" [(ngModel)]="opciont"> </div>
+        <div>
+            <p>Crear</p>
+        </div>
+        <div><input type="radio" value="Cargar" name="opcion" #opcion="ngModel" [(ngModel)]="opciont"> </div>
+        <div>
+            <p>Cargar</p>
+        </div>
+    </div>
 
     <br>
     <button type="submit" class="btn btn-primary btn-outline-warning">Subir</button>

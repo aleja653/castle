@@ -15,8 +15,8 @@ var api = app.Router()
  api.get('/obtener-fichero-video/:videoFile', md_upload,videoController.obtenerFicherovideo);
  api.post('/cargar-imagen-video/:id', md_upload,videoController.cargarImagenVideo);
  api.post('/cargar-fichero-serie/:id&:temporada&:capitulo', md_upload,videoController.cargarFicheroSerie);
-
-
+ api.get('/obtener-imagen-video/:imageFile',md_upload,videoController.obtenerImagenVideo);
+ api.get('/video/:id', videoController.obtenervideo);
  
 
  module.exports = api
