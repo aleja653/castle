@@ -8,75 +8,76 @@ import { VideoService } from 'src/app/servicios/video.service';
   styleUrls: ['./contenido-tools.component.css']
 })
 export class ContenidoToolsComponent implements OnInit {
-  tituloComponente:string;
-  video:Video;
+  tituloComponente: string;
+  video: Video;
   videoCorrecto;
-  cargarFichero:boolean;
-  filesToUpload: File;
-  actualizacionCorrecta:boolean;
+  cargarFichero: boolean;
+  filesToUploadImage: File;
+  filesToUploadVideo: File;
+  actualizacionCorrecta: boolean;
+  numerocapitulo;
+  numeroTemporada;
   constructor(
-    private _videoService:VideoService
+    private _videoService: VideoService
   ) {
-    this.video = new Video('','','','','','','','','','');
+    this.video = new Video('', '', '', '', '', '', '', '', '');
     this.cargarFichero = false;
     this.tituloComponente = "Crear video";
-    this.actualizacionCorrecta=false;
-   }
+    this.actualizacionCorrecta = false;
+  }
   ngOnInit() {
   }
-  manejoVideo(){
-    if(this.tituloComponente == "Crear video"){
-      this.crearVideo();
-    }else{
-      this.actualizarVideo();
-    } 
-  }
-  crearVideo(){
+
+  crearVideo() {
+    console.log(this.video)
+    console.log(this.filesToUploadImage)
+    console.log(this.filesToUploadVideo)
     this._videoService.crearVideo(this.video).subscribe(
-      (response:any)=>{
-        if(response.video){
-          this.video = response.video;
-          this.cargarFichero = true;
-          this.tituloComponente = "Actualizar video";
-          this.videoCorrecto = "El video se ha creado correctamente";
-        }else{
-          this.videoCorrecto = "No se ha podido crear el video, revisa el codigo T_T";
-        }
-      },error=>{
-        if (error != null) {
-          console.log(error)
-        }
+      (response: any) => {
+        if (response.video) {
+          this.video._id = response.video._id;
+          this._videoService.cargarImagenVideo(this.filesToUploadImage, this.video._id).subscribe(
+            (response: any) => {
+              if(this.video.tipo == "serie"){
+                this._videoService.cargarFicheroSerie(this.filesToUploadVideo
+                  ,this.video._id,this.numeroTemporada,this.numerocapitulo).subscribe(
+                    (response:any)=>{
+                      console.log(response)
+                    }, error=>console.log(error)
+                )
+              }
+              else{
+                this._videoService.cargarFicheroPelicula(this.filesToUploadVideo,this.video._id).subscribe(
+                  (response: any)=>{
+                    console.log(response)
+                  }, error=>console.log(error)
+                )
+
+              }
+            }, error => {
+              console.log(error)
+            }
+          )
+        } else { console.log("Error al crear la canción") }
+      }, error => {
+        console.log(error)
       }
+
+
     )
   }
-  actualizarVideo(){
-    this._videoService.cargarFicheroVideo(this.filesToUpload,this.video._id)
-    .subscribe(
-      (response:any)=>{
-        if(response.video){
-          this.actualizacionCorrecta = true;
-          this.videoCorrecto = "Fichero cargado correctamente";
-          setTimeout(()=>{
-            this.reset();
-          },3000)
-        }else{
-          this.videoCorrecto = "No se ha podido cargar el video, revisa el codigo :(";
-        }
-      },error=>{
-         if (error != null) {
-          console.log(error)
-        }
-      }
-    )
-  }
-  reset(){
-    this.video = new Video('','','','','','','','','','');
+
+  reset() {
+    this.video = new Video('', '', '', '', '', '', '', '', '');
     this.cargarFichero = false;
     this.tituloComponente = "Crear video";
     this.videoCorrecto = undefined;
     this.actualizacionCorrecta = false;
   }
-  fileChangeEvent(fileInput: any) {
-    this.filesToUpload = <File>fileInput.target.files[0];//recoger archivos seleccionados en el input
+  fileChangeEventImage(fileInput: any) {
+    this.filesToUploadImage = <File>fileInput.target.files[0];//recoger archivos seleccionados en el input
+  }
+  fileChangeEventVideo(fileInput: any) {
+    this.filesToUploadVideo = <File>fileInput.target.files[0];//recoger archivos seleccionados en el input
   }
 }

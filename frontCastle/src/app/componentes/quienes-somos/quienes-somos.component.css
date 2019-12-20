@@ -1,0 +1,100 @@
+* {
+    font-family: MedievalSharp;
+    color: #FFCC33
+;
+    margin-top: 2%;
+;
+}h5 {  font-size: 2em;
+text-align: center;
+}.card {
+ background-image: url(../../../assets/img/photo-1548445929-4f60a497f851.png);
+ background-size: cover;
+ background-attachment: fixed;
+}
+.card-text {
+    background-color:rgba(51, 51, 51, 0.9);
+    border-radius: 3%;
+    padding: 2%;   }
+   .card-title {
+    background-color:rgba(51, 51, 51, 0.9);
+    border-radius: 3%;
+    padding: 2%;
+    width: 600px;
+    margin-left: 28%;   }
+p {
+font-size: 1em;
+text-align: center;
+margin-bottom: 5rem;
+font-family: 'Roboto', sans-serif;
+font-weight: lighter;}
+.card-text {
+    margin-bottom: 5rem;
+    width: 600px;
+    text-align: center;
+    position: relative;
+    margin-left: 28%;
+}
+.btn-outline-warning{
+    
+    background:rgba(255, 255, 255, 0);
+    color: black;
+}
+.btn-outline-warning:hover{
+    
+    color: white;
+    background:#FFCC33 ;
+}
+img {
+    width: 50%;
+    margin-bottom: -5%;
+    margin-top: 0%;
+}.fondo {
+    background-image: url("../../../assets/img/Recurso1.png");
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 1%;
+    padding-inline: 1%;
+}.container_planes {
+   width: 70% ;
+   display: flex;
+   position: relative;
+   left: 15%;
+}.card {
+    text-align: center;
+    background-color: #212529
+
+;
+}
+.card img {
+    position: relative;
+    align-self: center;
+}.modal-body {
+    background-color: #333333
+
+ !important;
+}
+.modal-body img{
+    background-color: #333333
+
+ !important;
+    position: relative;
+    align-self: center;
+}.modal-header {
+    
+    background-color: #333333
+
+ !important;
+}
+.modal-footer    {
+    
+    background-color: #333333
+
+ !important;
+}
+.quienes_somos_text {
+    text-align: center;
+    padding-bottom: 5%;
+}.card-img-top {
+    width: 250px;
+    
+}

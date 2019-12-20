@@ -1,5 +1,5 @@
-<form #updateForm="ngForm" (ngSubmit)="manejoVideo()" ngNativeValidate>
-    <h2 class="title_form">{{ tituloComponente }}</h2>
+<form #updateForm="ngForm" (ngSubmit)="crearVideo()" ngNativeValidate>
+    <h2 class="title_form">Crear video</h2>
     <div class="form-group">
         <label for="nombre">Título:</label>
         <input type="text" class="form-control" id="Titulo" #titulo="ngModel" name="titulo" [(ngModel)]="video.titulo"
@@ -10,24 +10,68 @@
         <input type="text" class="form-control" id="Sinopsis" name="sinopsis" #sinopsis="ngModel"
             [(ngModel)]="video.sinopsis" [disabled]="cargarFichero" required>
     </div>
-    <div class="form-group">
-        <label for="nombre">Género:</label>
-        <input type="text" class="form-control" id="Genero" #genero="ngModel" name="genero" [(ngModel)]="video.genero"
-            [disabled]="cargarFichero" required>
+
+       <div class="form-group col-sm selectCat">
+        <label for="nombre">Categoría:</label>
+        <label for="cat1"></label>
+        <select class="form-control selectCat" id="cat1" #tipo="ngModel" name="categoria"
+            [(ngModel)]="video.genero" required>
+            <option value="romance">Romance</option>
+            <option value="drama">Drama</option>
+            <option value="terror">Anime</option>
+            <option value="comedia">Comedia</option>
+        </select>
     </div>
-    <br>
+
+    <div class="form-group col-sm selectTipo">
+        <label for="nombre">Tipo:</label>
+        <label for="tip1"></label>
+        <select class="form-control selectTipo" id="tip1" #tipo="ngModel" name="tipo"
+            [(ngModel)]="video.tipo" required>
+            <option value="serie">Serie</option>
+            <option value="pelicula">Película</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="nombre">Temporada:</label>
+        <input type="text" class="form-control" id="Temporada" name="temporada" #temporada="ngModel"
+            [(ngModel)]="numeroTemporada" [disabled]="cargarFichero">
+    </div>
+
+    <div class="form-group">
+        <label for="nombre">Capítulo:</label>
+        <input type="text" class="form-control" id="Capitulo" name="capitulo" #capitulo="ngModel"
+            [(ngModel)]="numerocapitulo" [disabled]="cargarFichero">
+    </div>
+
+    <br><br>
     <div class="input-group">
         <div class="custom-file">
             <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
-                placeholder="Subir fichero" (change)="fileChangeEvent($event)">
-            <label class="custom-file-label" for="inputGroupFile04">Seleccione el archivo</label>
+                placeholder="Subir fichero" (change)="fileChangeEventImage($event)">
+            <label class="custom-file-label" for="inputGroupFile04">Seleccione la imagen</label>
         </div>
         <!-- <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
         </div> -->
     </div>
+
+    <br><br>
+    
+    <div class="input-group">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
+                placeholder="Subir fichero" (change)="fileChangeEventVideo($event)">
+            <label class="custom-file-label" for="inputGroupFile04">Seleccione el archivo</label>
+        </div>
+        <!-- <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+        </div> -->
+    </div> 
+
     <br>
-    <button type="submit" class="btn btn-primary btn-outline-warning">{{ tituloComponente }}</button>
+    <button type="submit" class="btn btn-primary btn-outline-warning">Subir</button>
     <div *ngIf="videoCorrecto" class="alert alert-danger d-flex align-items-center">
         {{videoCorrecto}}
         <div class="spinner-border ml-auto" *ngIf="actualizacionCorrecta"

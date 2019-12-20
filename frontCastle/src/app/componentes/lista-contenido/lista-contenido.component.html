@@ -6,11 +6,11 @@
                 *ngFor="let video of videos">
                 {{video.titulo + ' - ' + video.genero}}
                 <div class="ml-auto">
-                    <a data-toggle="modal" href="#modal" class="iconoCancion"
+                    <a data-toggle="modal" href="#modal" class="iconoVideo"
                         (click)="agregarListaReproduccion(video)">
                         <i class="fas fa-plus"></i>
                     </a>
-                    <a data-toggle="modal" href="#modal" *ngIf="usuario.role == 'ROLE_ADMIN'" class="iconoCancion ml-2"
+                    <a data-toggle="modal" href="#modal" *ngIf="usuario.role == 'ROLE_ADMIN'" class="iconoVideo ml-2"
                         (click)="eliminarVideo(Video)">
                         <i class="fas fa-trash-alt"></i>
                     </a>

@@ -42,14 +42,27 @@ export class VideoService {
   }
 
   //Cargar fichero canción
-  cargarFicheroVideo(file: File, id) {
+  cargarFicheroPelicula(file: File, id) {
     var formData = new FormData();
-    formData.append('video', file);
+    formData.append('archivo', file);
     return this._http.post(
-      this.url + "cargar-fichero-video/" + id,
+      this.url + "cargar-fichero-pelicula/" + id,
       formData
     ).pipe(map(res => res));
   }
+
+  cargarFicheroSerie(file: File, id,numeroTemporada,capitulo) {
+    var formData = new FormData();
+    formData.append('archivo', file);
+    return this._http.post(
+      this.url + "cargar-fichero-serie/" + id + "&" + numeroTemporada + "&" + capitulo,
+      formData
+    ).pipe(map(res => res));
+  }
+
+
+
+
 
  //Obtener Videos con genero
 obtenerVideos(genero){
@@ -73,5 +86,16 @@ obtenerVideos(genero){
      options
   ).pipe(map(res => res));
 } */
+
+cargarImagenVideo(file: File, id) {
+  var formData = new FormData();
+  formData.append('image', file);
+  return this._http.post(
+    this.url + "cargar-imagen-video/" + id,
+    formData
+  ).pipe(map(res => res));
+}
+
+
 
 }

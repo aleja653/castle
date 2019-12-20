@@ -11,7 +11,12 @@ var api = app.Router()
  api.post('/video',videoController.crearVideo);
  api.delete('/video/:id',videoController.eliminarVideo);
  api.get('/videos/:genero', videoController.obtenervideos);// lista los videos por genero
- api.post('/cargar-fichero-video/:id', md_upload,videoController.cargarFicheroVideo);
+ api.post('/cargar-fichero-pelicula/:id', md_upload,videoController.cargarFicheroPelicula);
  api.get('/obtener-fichero-video/:videoFile', md_upload,videoController.obtenerFicherovideo);
+ api.post('/cargar-imagen-video/:id', md_upload,videoController.cargarImagenVideo);
+ api.post('/cargar-fichero-serie/:id&:temporada&:capitulo', md_upload,videoController.cargarFicheroSerie);
+
+
+ 
 
  module.exports = api

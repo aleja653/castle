@@ -33,7 +33,7 @@ export class ListaContenidoComponent implements OnInit {
     this._videoService.obtenerVideos(this.genero).subscribe(
       (response:any)=>{
         if(response.videos){
-          this.videos = response.canciones;
+          this.videos = response.videos;
           this.existenVideos = true;
         }else{
           this.alertaVideos = `No se pudieron cargar los videos, contacte al administrador de la aplicacion`;
@@ -59,10 +59,10 @@ export class ListaContenidoComponent implements OnInit {
     this._servicioCompartido.emitirVideo(video);
   }
 
-  eliminarCancion(video){
+  eliminarVideo(video){
     this._videoService.eliminarVideo(video._id).subscribe(
       (response:any)=>{
-        if(response.cancion){
+        if(response.video){
           this.avisoVideos = "video eliminado";
           this.cargarVideos();
         }else{
