@@ -5,6 +5,7 @@ import { VideoService } from
 import { Usuario } from '../../modelos/usuarios';
 import { CompartidoService } from
 '../../servicios/compartido.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-slidercatalogo',
@@ -15,14 +16,16 @@ export class SlidercatalogoComponent implements OnInit {
   @Input() genero: string;// campo para filtrar genero
 
   videos:Video[];
-  existenVideos;
+  existenVideos;  
   alertaVideos;
   avisoVideos;
   usuario:Usuario;
+  url = "http://localhost:3977/api/obtener-imagen-video/"
 
   constructor(
-    private _cancionService:VideoService,
-    private _servicioCompartido:CompartidoService
+    private _videoService:VideoService,
+    private _servicioCompartido:CompartidoService,
+    private _router: Router
   ) {
     this.existenVideos = false;
     this.usuario = JSON.parse(localStorage.getItem("sesion"));
@@ -33,10 +36,12 @@ export class SlidercatalogoComponent implements OnInit {
   }
 
   cargarVideos(){
-    this._cancionService.obtenerVideos(this.genero).subscribe(
+
+    this._videoService.obtenerVideos("/"+this.genero).subscribe(
       (response:any)=>{
         if(response.videos){
-          this.videos = response.canciones;
+          console.log(response)
+          this.videos = response.videos;
           this.existenVideos = true;
         }else{
           this.alertaVideos = `No se pudieron cargar 
@@ -45,7 +50,7 @@ export class SlidercatalogoComponent implements OnInit {
         }
       },error=>{
         if (error != null) {
-          console.log(error)
+          console.log(error)  
         }
       }
     )
@@ -65,9 +70,9 @@ export class SlidercatalogoComponent implements OnInit {
   }
 
   eliminarVideo(video){
-    this._cancionService.eliminarVideo(video._id).subscribe(
+    this._videoService.eliminarVideo(video._id).subscribe(
       (response:any)=>{
-        if(response.cancion){
+        if(response.video){
           this.avisoVideos = "Video eliminado";
           this.cargarVideos();
         }else{

@@ -278,6 +278,38 @@ function cargarImagenVideo(req, res) {
     }
 }
 
+function obtenerImagenVideo(req,res){
+    //nombre fichero
+    var imageFile = req.params.imageFile;
+    //ruta archivo
+    var path_file = './uploads/video/'+imageFile;
+    //se comprueba si existe
+    fs.exists(path_file,function(exists){
+        if(exists){
+            //devolvemos la imagen
+            res.sendFile(path.resolve(path_file));
+        }else{
+            res.status(200).send({message:"No existe imagen"});
+        }
+    });
+}
+
+function obtenerVideo(req,res){
+    var id = req.params.id;
+
+    Video.findById(id)
+    .then((videoGuardada) => {
+        if (!videoGuardada) {
+            res.status(404).send({ message: 'No se ha creado exitosamente el video' })
+        } else {
+            res.status(200).send({ video: videoGuardada })
+        }
+    })
+    .catch(err => {
+        res.status(500).send({ message: 'Error al guardar video' })
+    })
+}
+
 module.exports = {
     crearVideo,
     eliminarVideo,
@@ -285,6 +317,8 @@ module.exports = {
     cargarFicheroPelicula,
     obtenervideos,
     cargarImagenVideo,
-    cargarFicheroSerie
+    cargarFicheroSerie,
+    obtenerImagenVideo,
+    obtenerVideo
 }
 

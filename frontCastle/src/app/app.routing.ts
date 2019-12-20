@@ -23,7 +23,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: '', component: ContentIndexComponent },
     { path:'menu',component:MainMenuComponent },
-    { path:'video',component:VideosComponent },
+    { path:'video/:id',component:VideosComponent },
     { path:'catalogo',component:CatalogoComponent },
     { path:'planes',component:PlanesHomeComponent },
     { path:'quienes',component:QuienesSomosComponent },
